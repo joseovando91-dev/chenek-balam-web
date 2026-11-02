@@ -39,7 +39,7 @@ export default function ContactSection() {
   const inputCls = 'w-full px-4 py-3 rounded-lg bg-[#111122] border border-[#1a1a2e] text-[#F0F0F0] placeholder-[#555] focus:border-[#00C875] focus:outline-none focus:ring-1 focus:ring-[#00C875]/30 transition-colors text-sm';
 
   const channels = [
-    { icon: <WhatsAppIcon className="w-5 h-5" />, label: 'WhatsApp', value: CONTACT.phoneDisplay, href: whatsappLink('Hola, equipo CHENEK BALAM. Me gustaría recibir información.'), color: '#25D366' },
+    { icon: <WhatsAppIcon className="w-5 h-5" />, label: 'WhatsApp', value: CONTACT.phoneDisplay, href: whatsappLink(CONTACT.whatsappGreeting), color: '#25D366' },
     { icon: <Phone size={20} />, label: 'Teléfono', value: CONTACT.phoneDisplay, href: `tel:${CONTACT.phoneTel}`, color: '#00C875' },
     { icon: <Mail size={20} />, label: 'Correo', value: CONTACT.email, href: `mailto:${CONTACT.email}`, color: '#0077B6' },
     { icon: <Instagram size={20} />, label: 'Instagram', value: CONTACT.instagramLabel, href: CONTACT.instagram, color: '#E1306C' },

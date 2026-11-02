@@ -1,5 +1,5 @@
 'use client';
-import { whatsappLink } from '@/lib/contact';
+import { CONTACT, whatsappLink } from '@/lib/contact';
 
 export function WhatsAppIcon({ className = 'w-6 h-6' }: { className?: string }) {
   return (
@@ -9,16 +9,70 @@ export function WhatsAppIcon({ className = 'w-6 h-6' }: { className?: string }) 
   );
 }
 
+function InstagramIcon({ className = 'w-6 h-6' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17.6" cy="6.4" r="0.9" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function FacebookIcon({ className = 'w-6 h-6' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M13.5 21.9v-7.5h2.5l.4-3h-2.9V9.5c0-.86.24-1.45 1.48-1.45h1.58V5.37a21 21 0 0 0-2.3-.12c-2.28 0-3.84 1.39-3.84 3.95v2.2H7.85v3h2.57v7.5H13.5z" />
+    </svg>
+  );
+}
+
+const btn =
+  'group relative w-12 h-12 sm:w-14 sm:h-14 rounded-full text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform';
+
+function Tooltip({ text }: { text: string }) {
+  return (
+    <span className="pointer-events-none absolute left-full ml-3 whitespace-nowrap rounded-md bg-[#111122] border border-[#1a1a2e] px-2.5 py-1 text-xs text-[#F0F0F0] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block">
+      {text}
+    </span>
+  );
+}
+
+/** Botones flotantes de redes sociales (esquina inferior izquierda). */
 export default function WhatsAppButton() {
   return (
-    <a
-      href={whatsappLink('Hola, equipo CHENEK BALAM. Me gustaría recibir información.')}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Escríbenos por WhatsApp"
-      className="fixed bottom-5 left-5 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg shadow-[#25D366]/30 hover:scale-105 transition-transform"
-    >
-      <WhatsAppIcon className="w-7 h-7" />
-    </a>
+    <div className="fixed bottom-5 left-5 z-40 flex flex-col gap-3">
+      <a
+        href={CONTACT.instagram}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Síguenos en Instagram"
+        className={`${btn} shadow-[#DD2A7B]/30`}
+        style={{ background: 'radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%)' }}
+      >
+        <InstagramIcon className="w-6 h-6 sm:w-7 sm:h-7" />
+        <Tooltip text={`Instagram ${CONTACT.instagramLabel}`} />
+      </a>
+      <a
+        href={CONTACT.facebook}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Síguenos en Facebook"
+        className={`${btn} bg-[#1877F2] shadow-[#1877F2]/30`}
+      >
+        <FacebookIcon className="w-7 h-7 sm:w-8 sm:h-8" />
+        <Tooltip text={`Facebook · ${CONTACT.facebookLabel}`} />
+      </a>
+      <a
+        href={whatsappLink(CONTACT.whatsappGreeting)}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Escríbenos por WhatsApp"
+        className={`${btn} bg-[#25D366] shadow-[#25D366]/30`}
+      >
+        <WhatsAppIcon className="w-6 h-6 sm:w-7 sm:h-7" />
+        <Tooltip text={`WhatsApp ${CONTACT.phoneDisplay}`} />
+      </a>
+    </div>
   );
 }

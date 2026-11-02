@@ -8,11 +8,10 @@ export const CONTACT = {
   whatsapp: '529611544298',
   email: 'chenekbalam1@gmail.com',
   location: 'TecNM Campus Tuxtla Gutiérrez, Chiapas, México',
-  // TODO: reemplazar por la URL directa del perfil (p. ej. https://www.instagram.com/usuario)
-  instagram: 'https://www.instagram.com/explore/search/keyword/?q=chenek%20balam',
-  instagramLabel: 'Chenek Balam',
-  // TODO: reemplazar por la URL directa de la página (p. ej. https://www.facebook.com/pagina)
-  facebook: 'https://www.facebook.com/search/top?q=chenek%20balam%20robot%20ambiental',
+  whatsappGreeting: 'Hola, equipo CHENEK BALAM. Me gustaría recibir información sobre el robot.',
+  instagram: 'https://www.instagram.com/chenekbalam/',
+  instagramLabel: '@chenekbalam',
+  facebook: 'https://www.facebook.com/profile.php?id=61576361922860',
   facebookLabel: 'Chenek Balam Robot Ambiental',
 };
 
