@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Model3D from '@/components/model-3d';
 import { Cpu, Radio, Satellite, Wifi, Camera, BatteryCharging, Gauge, ShieldCheck } from 'lucide-react';
 
 const parts = [
@@ -59,14 +60,19 @@ export default function EngineeringSection() {
           </p>
         </motion.div>
 
-        {/* Exploded diagram */}
+        {/* Modelo 3D interactivo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={visible ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-[#1a1a2e] mb-8 bg-[#06060c]"
+          className="relative aspect-[4/3] sm:aspect-[16/9] rounded-2xl overflow-hidden border border-[#1a1a2e] mb-8 bg-[#06060c]"
         >
-          <Image src="/design/robot-exploded.webp" alt="Diagrama despiece del robot CHENEK BALAM" fill className="object-contain" sizes="(max-width: 768px) 100vw, 1100px" />
+          {visible && (
+            <Model3D autoRotate cameraOrbit="35deg 70deg auto" className="block w-full h-full" style={{ width: '100%', height: '100%' }} />
+          )}
+          <p className="absolute bottom-3 left-0 right-0 text-center text-xs text-[#808080] pointer-events-none">
+            Modelo 3D del diseño final · arrastra para girar
+          </p>
         </motion.div>
 
         {/* Parts grid */}
@@ -108,7 +114,7 @@ export default function EngineeringSection() {
             transition={{ duration: 0.6 }}
             className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-[#1a1a2e] bg-[#06060c]"
           >
-            <Image src="/design/robot-cutaway.webp" alt="Vista interior de la electrónica" fill className="object-contain" sizes="(max-width: 768px) 100vw, 550px" />
+            <Image src="/models/chenek-balam-electronica.webp" alt="Caja estanca con la electrónica de control del robot CHENEK BALAM" fill className="object-cover" sizes="(max-width: 768px) 100vw, 550px" />
           </motion.div>
 
           <div className="grid sm:grid-cols-2 gap-4">

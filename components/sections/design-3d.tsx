@@ -1,34 +1,31 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Rotate3d, MousePointer2 } from 'lucide-react';
+import { Rotate3d, MousePointer2, Hand } from 'lucide-react';
+import Model3D from '@/components/model-3d';
 
-const frames = [
+const views = [
   {
-    src: '/real/proto-front.jpg',
     label: 'Vista Frontal',
-    desc: 'Boca de admisión frontal y canal central donde entran el agua y los residuos.',
+    desc: 'Boca de admisión con compuertas, sensores ultrasónicos de obstáculos y cámara en la cabeza del jaguar.',
   },
   {
-    src: '/real/proto-side.jpg',
     label: 'Perfil Lateral',
-    desc: 'Cascos tipo pontón con línea de flotación estable y acabado de jaguar pintado a mano.',
+    desc: 'Cascos gemelos tipo pontón que dan estabilidad sobre el agua y cubierta central con acabado de jaguar.',
   },
   {
-    src: '/real/proto-rear.jpg',
     label: 'Sistema de Recolección',
-    desc: 'Canasta trasera que captura y retiene las botellas y residuos flotantes.',
+    desc: 'Canasta trasera de malla donde se acumulan las botellas y residuos flotantes, fácil de vaciar en tierra.',
   },
   {
-    src: '/real/proto-water.jpg',
-    label: 'Prototipo en Operación',
-    desc: 'El Chenek Pequeño navegando sobre el agua durante las pruebas reales.',
+    label: 'Electrónica a Bordo',
+    desc: 'Caja estanca con la electrónica de control y módulo solar en etapa de integración (en desarrollo).',
   },
 ];
 
 export default function Design3DSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const viewerRef = useRef<HTMLElement & { cameraOrbit?: string }>(null);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -53,59 +50,50 @@ export default function Design3DSection() {
     };
   }, []);
 
-  const activeIndex = Math.min(frames.length - 1, Math.floor(progress * frames.length));
-  const rotateY = (progress - 0.5) * 36;
-  const current = frames[activeIndex] ?? frames[0];
+  // El scroll gira el robot 330° y baja un poco la cámara a la mitad del recorrido.
+  const theta = -30 + progress * 330;
+  const phi = 76 - 12 * Math.sin(progress * Math.PI);
+  const orbit = `${theta.toFixed(1)}deg ${phi.toFixed(1)}deg auto`;
+
+  useEffect(() => {
+    const v = viewerRef.current;
+    if (v) v.cameraOrbit = orbit;
+  }, [orbit]);
+
+  const activeIndex = Math.min(views.length - 1, Math.floor(progress * views.length));
+  const current = views[activeIndex] ?? views[0];
 
   return (
-    <section id="diseno" ref={sectionRef} className="relative bg-[#06060c]" style={{ height: '400vh' }}>
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* ambient glow */}
-        <div className="absolute inset-0 bg-glow-green opacity-30 pointer-events-none" />
+    <section id="diseno" ref={sectionRef} className="relative bg-[#06060c]" style={{ height: '320vh' }}>
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden pt-16">
         <div
-          className="absolute top-1/2 left-1/2 w-[70vw] h-[70vw] max-w-[700px] max-h-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(0,200,117,0.12) 0%, transparent 70%)' }}
+          className="absolute top-1/2 left-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
+          style={{ background: 'radial-gradient(circle, rgba(0,200,117,0.14) 0%, transparent 70%)' }}
         />
 
-        <div className="relative z-10 text-center mb-2 px-4">
+        <div className="relative z-10 text-center px-4">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00C875]/10 text-[#00C875] text-sm font-medium mb-3">
-            <Rotate3d size={16} /> Prototipo real · Chenek Pequeño
+            <Rotate3d size={16} /> Modelo 3D · Diseño final
           </span>
           <h2 className="font-display font-black text-3xl sm:text-5xl tracking-tight">
-            Explora el <span className="text-gradient-green">prototipo</span>
+            Explora el <span className="text-gradient-green">robot en 3D</span>
           </h2>
-          <p className="text-[#808080] text-sm mt-2 flex items-center justify-center gap-2">
-            <MousePointer2 size={14} /> Desliza para recorrer el robot real
+          <p className="text-[#808080] text-xs sm:text-sm mt-2 flex items-center justify-center gap-x-4 gap-y-1 flex-wrap">
+            <span className="flex items-center gap-1.5"><MousePointer2 size={14} /> Desliza para girarlo</span>
+            <span className="flex items-center gap-1.5"><Hand size={14} /> Arrastra o pellizca para explorarlo</span>
           </p>
         </div>
 
-        {/* 3D viewer */}
-        <div className="relative z-10 w-full max-w-4xl aspect-[16/10] mx-auto" style={{ perspective: '1400px' }}>
-          <div
-            className="relative w-full h-full transition-transform duration-300 ease-out"
-            style={{ transform: `rotateY(${rotateY}deg) scale(${0.9 + progress * 0.15})`, transformStyle: 'preserve-3d' }}
-          >
-            {frames.map((frame, i) => (
-              <div
-                key={frame.src}
-                className="absolute inset-0 transition-opacity duration-500 rounded-2xl overflow-hidden border border-[#1a1a2e] shadow-2xl"
-                style={{ opacity: i === activeIndex ? 1 : 0 }}
-              >
-                <Image
-                  src={frame.src}
-                  alt={`CHENEK BALAM — ${frame.label}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 900px"
-                  priority={i === 0}
-                />
-              </div>
-            ))}
-          </div>
+        <div className="relative z-10 w-full max-w-5xl flex-1 max-h-[46vh] sm:max-h-[58vh] min-h-[260px] mx-auto">
+          <Model3D
+            ref={viewerRef}
+            cameraOrbit={orbit}
+            className="block w-full h-full"
+            style={{ width: '100%', height: '100%' }}
+          />
         </div>
 
-        {/* caption */}
-        <div className="relative z-10 h-20 mt-2 px-4 text-center">
+        <div className="relative z-10 min-h-[5.5rem] px-6 sm:px-4 text-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -120,14 +108,11 @@ export default function Design3DSection() {
           </AnimatePresence>
         </div>
 
-        {/* progress dots */}
-        <div className="relative z-10 flex gap-2 mt-2">
-          {frames.map((_, i) => (
+        <div className="relative z-10 flex gap-2 mt-1 mb-20 sm:mb-6">
+          {views.map((_, i) => (
             <span
               key={i}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === activeIndex ? 'w-8 bg-[#00C875]' : 'w-1.5 bg-[#2a2a3e]'
-              }`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === activeIndex ? 'w-8 bg-[#00C875]' : 'w-1.5 bg-[#2a2a3e]'}`}
             />
           ))}
         </div>
