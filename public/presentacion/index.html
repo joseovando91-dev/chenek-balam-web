@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CHENEK BALAM — Feria del Emprendimiento 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0;height:100%;background:#0b1512;overflow:hidden;font-family:'Source Sans 3',Arial,sans-serif}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0}
+section{position:absolute;inset:0;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .7s ease, transform .7s ease;transform:translateX(40px)}
+section.on{opacity:1;visibility:visible;transform:none}
+section.prev{transform:translateX(-40px)}
+section *{margin:0;box-sizing:border-box}
+section h1,section h2,section h3{font-weight:inherit}
+section aside{display:none}
+#bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:12px;justify-content:center;align-items:center;padding:10px;font:14px Arial,sans-serif;color:#c9c2b4;opacity:.25;transition:opacity .3s}
+#bar:hover{opacity:1}
+#bar button{background:#13241f;color:#f4efe6;border:1px solid #e0782a;border-radius:8px;padding:6px 14px;cursor:pointer;font-size:14px}
+#notes{position:fixed;left:0;right:0;bottom:48px;margin:auto;max-width:900px;background:#13241fee;color:#f4efe6;font:18px/1.45 Arial,sans-serif;padding:16px 20px;border-radius:12px;display:none}
+</style></head><body>
+<div id="stage">
+<section data-i="0" id="cover" data-transition="magic" style="display:flex; flex-direction:column; gap:28px; justify-content:center; padding:160px 128px 128px; background:#13241f">
+  <img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute; top:180px; left:0; width:820px; height:898px; object-fit:contain">
+  <img src="img/proto-water.jpg" alt="El robot CHENEK BALAM navegando en una laguna" style="position:absolute; top:0; left:1040px; width:880px; height:1080px">
+  <img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute; top:48px; left:128px; width:48px; height:53px; object-fit:contain">
+  <p style="position:absolute; top:56px; left:192px; width:600px; font-family:'Source Sans 3', Arial, sans-serif; font-size:24px; font-weight:700; letter-spacing:4px; color:#f4efe6">CHENEK BALAM</p>
+  <div style="display:flex; flex-direction:row; gap:20px; align-items:center">
+    <div style="width:64px; height:6px; display:flex; flex-direction:column; background:#e0782a; border-radius:3px">
+    </div>
+    <p style="font-family:'Source Sans 3', Arial, sans-serif; font-size:26px; font-weight:700; letter-spacing:4px; color:#e0782a">FERIA DEL EMPRENDIMIENTO 2026</p>
+  </div>
+  <h1 style="width:840px; font-family:Outfit, Arial, sans-serif; font-size:128px; font-weight:800; line-height:1; color:#f4efe6">CHENEK BALAM</h1>
+  <p style="width:800px; font-family:'Source Sans 3', Arial, sans-serif; font-size:40px; line-height:1.3; color:#f4efe6">El robot acuático chiapaneco que limpia ríos y lagunas y monitorea la calidad del agua.</p>
+  <p style="width:800px; font-family:'Source Sans 3', Arial, sans-serif; font-size:26px; line-height:1.5; color:#c9c2b4">Sergio Antonio Rayo Cabrera (representante) · Eylan Jarib Cruz Gómez · Ángel Adrián Moguel González · Brayam Alexis Ríos García · Cristian Alfredo Ovando Pérez<br>Instituto Tecnológico de Tuxtla Gutiérrez · TecNM</p>
+  <img src="img/wm_completo.png" alt="Marca de agua: modelo 3D completo de CHENEK BALAM" style="position:absolute;left:560px;top:864px;width:260px;height:207px;object-fit:contain">
+  <img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="rise 1" style="position:absolute; top:740px; right:0; width:440px; height:338px; object-fit:contain">
+  <aside>[0:00 – 0:30] Buenos días, integrantes del jurado. Somos el equipo de CHENEK BALAM, estudiantes del Instituto Tecnológico de Tuxtla Gutiérrez. Nuestro proyecto está inspirado en el jaguar, el balam, símbolo de la cultura maya y chiapaneca. CHENEK BALAM es un robot acuático hecho en Chiapas que recoge la basura que flota en ríos y lagunas, y que al mismo tiempo mide la calidad del agua. En los próximos minutos les mostraremos por qué es una oportunidad de negocio real, viable y con impacto para Chiapas.</aside>
+</section>
+
+<section data-i="1" id="problema" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
+<img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#5f6b66">02 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#1f6f62;letter-spacing:3px">LA NECESIDAD</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1400px">La basura que llega a nuestros ríos termina en el Cañón del Sumidero y en el mar</h2>
+<div style="display:flex;gap:40px;width:1480px">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#13241f;color:#f4efe6;padding:44px;border-radius:24px">
+<p style="font-family:'Outfit', Arial, sans-serif;font-size:96px;font-weight:800;color:#e0782a;line-height:1.0">45,000 t</p>
+<p style="font-size:30px;line-height:1.35">de desechos sólidos se acumulan cada año en el Cañón del Sumidero; cerca del 90 % es PET.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#fbf8f2;padding:44px;border-radius:24px;border:1px solid #ddd5c6">
+<p style="font-family:'Outfit', Arial, sans-serif;font-size:96px;font-weight:800;color:#1f6f62;line-height:1.0">59.1 %</p>
+<p style="font-size:30px;line-height:1.35">de los cuerpos de agua monitoreados en México están contaminados.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#fbf8f2;padding:44px;border-radius:24px;border:1px solid #ddd5c6">
+<p style="font-family:'Outfit', Arial, sans-serif;font-size:96px;font-weight:800;color:#1f6f62;line-height:1.0">11 M t</p>
+<p style="font-size:30px;line-height:1.35">de plástico llegan a los océanos cada año; los ríos son su principal vía.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#5f6b66">Fuentes: López Pimentel (2015), tesis de maestría, UNAM; CONAGUA; PNUMA.</p>
+<img src="img/wm_camara.png" alt="Marca de agua: modelo 3D con la cámara de visión con IA resaltada" style="position:absolute;left:1290px;top:800px;width:290px;height:231px;object-fit:contain">
+<p style="position:absolute;left:1000px;top:930px;width:270px;font-size:24px;line-height:1.25;text-align:right;color:#5f6b66"><b><span style="color:#e0782a">PIEZA 01</span></b><br>Cámara de visión con IA</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[0:30 – 1:15] Empecemos por la necesidad. Cada año se acumulan más de 45 mil toneladas de desechos sólidos en el Cañón del Sumidero, y casi el 90 por ciento es plástico PET. No es un problema solo de Chiapas: más de la mitad de los cuerpos de agua monitoreados en México están contaminados, y los ríos son la principal vía por la que el plástico llega al mar. Esta basura daña la biodiversidad, la pesca y el turismo, que son motores de la economía de nuestro estado.</aside>
+</section>
+
+<section data-i="2" id="hoy" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
+<img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#5f6b66">03 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#1f6f62;letter-spacing:3px">CÓMO SE LIMPIA HOY</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1400px">Las opciones actuales son riesgosas, contaminantes o inaccesibles</h2>
+<table style="width:1480px;font-size:30px;border-collapse:collapse">
+<tr><th style="text-align:left;padding:18px 24px;background:#13241f;color:#f4efe6;width:460px">Método actual</th><th style="text-align:left;padding:18px 24px;background:#13241f;color:#f4efe6">Su limitación</th></tr>
+<tr><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Cuadrillas manuales</td><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Riesgo de infecciones y ahogamiento; lentas y limitadas a las orillas</td></tr>
+<tr><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Lanchas a motor con redes</td><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Combustión, derrames de aceite y ruido en áreas naturales</td></tr>
+<tr><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Barreras flotantes</td><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Pasivas: solo retienen lo que la corriente les lleva</td></tr>
+<tr><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Robots extranjeros</td><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">De 15,000 a más de 40,000 dólares, sin refacciones ni soporte en México</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#5f6b66">Robots de referencia: WasteShark, ClearBot y Jellyfishbot.</p>
+<img src="img/wm_ultra.png" alt="Marca de agua: modelo 3D con los sensores ultrasónicos resaltados" style="position:absolute;left:1290px;top:800px;width:290px;height:231px;object-fit:contain">
+<p style="position:absolute;left:1000px;top:930px;width:270px;font-size:24px;line-height:1.25;text-align:right;color:#5f6b66"><b><span style="color:#e0782a">PIEZA 02</span></b><br>Sensores ultrasónicos</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[1:15 – 1:50] ¿Cómo se limpia hoy? Con cuadrillas de personas que se meten al agua y arriesgan su salud; con lanchas de motor que contaminan con combustible; o con barreras que solo atrapan lo que la corriente les acerca. Existen robots extranjeros, pero cuestan entre 15 mil y más de 40 mil dólares, y si se descomponen no hay refacciones ni soporte en México. Ahí está la oportunidad: no existe una solución accesible, local y eficiente.</aside>
+</section>
+
+<section data-i="3" id="solucion" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:36px">
+<img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:-60px;top:200px;width:760px;height:832px;object-fit:contain">
+<img src="img/proto-action.jpg" alt="CHENEK BALAM recolectando botellas de plástico en una laguna" data-build-in="fade" style="position:absolute;left:1060px;top:160px;width:732px;height:500px;object-fit:cover;border-radius:24px">
+<img src="img/proto-stand.jpg" alt="El prototipo en exhibición con su electrónica a la vista" data-build-in="rise" style="position:absolute;left:1060px;top:684px;width:500px;height:236px;object-fit:cover;border-radius:24px">
+<img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#c9c2b4">04 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#e0782a;letter-spacing:3px">NUESTRA SOLUCIÓN</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:860px">Un catamarán eléctrico que navega hacia la basura y la recoge</h2>
+<div style="display:flex;flex-direction:column;gap:22px;width:860px">
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">120 kg</b> de residuos recolectados en 30 minutos con el prototipo actual.</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Operación remota:</b> nadie tiene que meterse al agua.</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Monitoreo del agua:</b> pH, turbidez, conductividad y temperatura en tiempo real.</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Cero emisiones:</b> propulsión eléctrica y recarga solar.</p>
+</div>
+<img src="img/wm_canal.png" alt="Marca de agua: modelo 3D con el canal de admisión resaltado" style="position:absolute;left:640px;top:880px;width:240px;height:191px;object-fit:contain">
+<p style="position:absolute;left:360px;top:960px;width:260px;font-size:24px;line-height:1.25;text-align:right;color:#c9c2b4"><b><span style="color:#e0782a">PIEZA 03</span></b><br>Canal de admisión</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[1:50 – 2:40] Nuestra solución es CHENEK BALAM: un robot tipo catamarán, con propulsión eléctrica, que el operador dirige a distancia hacia donde se acumula la basura. La basura entra por un canal central y queda atrapada en una malla trasera. Nuestro prototipo actual ya recolectó 120 kilos de residuos en 30 minutos. Además, estamos integrando sensores que miden la calidad del agua: pH, turbidez, conductividad y temperatura, y envían los datos en tiempo real a una aplicación. Es decir, no solo limpia: también genera información para cuidar el agua.</aside>
+</section>
+
+<section data-i="4" id="innovacion" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
+<img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#5f6b66">05 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#1f6f62;letter-spacing:3px">INNOVACIÓN</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1000px">Lo que distingue a CHENEK BALAM</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;width:1000px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbf8f2;padding:36px;border-radius:24px;border:1px solid #ddd5c6">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:700;color:#1f6f62">Limpieza activa</h3>
+<p style="font-size:26px;line-height:1.35">Navega hacia la basura en vez de esperar a que la corriente la acerque.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbf8f2;padding:36px;border-radius:24px;border:1px solid #ddd5c6">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:700;color:#1f6f62">Limpia y mide</h3>
+<p style="font-size:26px;line-height:1.35">Sensores de calidad del agua, GPS y pesaje, con datos en una app.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#fbf8f2;padding:36px;border-radius:24px;border:1px solid #ddd5c6">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:700;color:#1f6f62">Tecnología nacional</h3>
+<p style="font-size:26px;line-height:1.35">Costo accesible, refacciones locales y respaldo del TecNM.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#13241f;color:#f4efe6;padding:36px;border-radius:24px">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:700;color:#e0782a">Identidad chiapaneca</h3>
+<p style="font-size:26px;line-height:1.35">Diseño de jaguar que atrae al turismo y educa sobre el agua.</p>
+</div>
+</div>
+<img src="img/constr-body.jpg" alt="Construcción del modelo Grande con piel de jaguar" data-build-in="rise" style="position:absolute;left:1176px;top:160px;width:616px;height:347px;object-fit:cover;border-radius:24px">
+<img src="img/comp-mascot.jpg" alt="La mascota de CHENEK BALAM en InnovaTecNM 2025" data-build-in="rise" style="position:absolute;left:1176px;top:531px;width:616px;height:347px;object-fit:cover;border-radius:24px">
+<p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#5f6b66">Construcción del modelo Grande y la mascota del proyecto en InnovaTecNM 2025.</p>
+<img src="img/wm_panel.png" alt="Marca de agua: modelo 3D con el panel solar resaltado" style="position:absolute;left:720px;top:790px;width:240px;height:191px;object-fit:contain">
+<p style="position:absolute;left:440px;top:900px;width:260px;font-size:24px;line-height:1.25;text-align:right;color:#5f6b66"><b><span style="color:#e0782a">PIEZA 04</span></b><br>Panel solar</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[2:40 – 3:20] ¿Qué nos hace diferentes? Primero, es limpieza activa: el robot va hacia la basura, no espera a que llegue. Segundo, limpia y mide al mismo tiempo: registra la calidad del agua, su ubicación por GPS y cuántos kilos recolecta. Tercero, es tecnología nacional: cuesta mucho menos que un robot importado y sus refacciones se consiguen aquí. Y cuarto, su diseño de jaguar le da identidad chiapaneca: llama la atención del turismo y se vuelve una herramienta de educación ambiental. Aquí ven la construcción de nuestro modelo Grande y la mascota del proyecto.</aside>
+</section>
+
+<section data-i="5" id="trayectoria" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:-60px;top:200px;width:760px;height:832px;object-fit:contain">
+<img src="img/comp-trophy.jpg" alt="El equipo CHENEK BALAM con su reconocimiento en InnovaTecNM 2025" data-build-in="fade" style="position:absolute;left:1240px;top:160px;width:552px;height:500px;object-fit:cover;border-radius:24px">
+<img src="img/comp-booth.jpg" alt="El equipo con autoridades en el stand del proyecto" data-build-in="rise" style="position:absolute;left:1240px;top:684px;width:340px;height:236px;object-fit:cover;border-radius:24px">
+<img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#c9c2b4">06 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#e0782a;letter-spacing:3px">VALIDACIÓN</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1040px">Un proyecto que ya está probado y respaldado</h2>
+<div style="display:flex;flex-direction:column;gap:20px;width:1040px">
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Prototipo operativo</b> probado en agua.</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">1.er lugar local</b> en Sostenibilidad en InnovaTecNM y etapa nacional en Pachuca (2025).</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Convenio</b> con la Secretaría de Pesca y Acuacultura de Chiapas.</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Presentado</b> ante la Presidenta de la República.</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Marca registrada</b> ante el IMPI y cobertura en más de nueve medios nacionales.</p>
+</div>
+<img src="img/wm_caja.png" alt="Marca de agua: modelo 3D con la caja estanca de electrónica resaltada" style="position:absolute;left:700px;top:790px;width:300px;height:239px;object-fit:contain">
+<p style="position:absolute;left:400px;top:890px;width:280px;font-size:24px;line-height:1.25;text-align:right;color:#c9c2b4"><b><span style="color:#e0782a">PIEZA 05</span></b><br>Caja estanca de electrónica</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[3:20 – 4:00] Y esto no es solo una idea. Ya tenemos un prototipo que funciona en el agua. Obtuvimos el primer lugar local en la categoría de Sostenibilidad de InnovaTecNM y representamos a Chiapas en la etapa nacional en Pachuca. Firmamos un convenio con la Secretaría de Pesca y Acuacultura del estado, presentamos el proyecto ante la Presidenta de la República, la marca está registrada ante el IMPI y más de nueve medios nacionales han cubierto el proyecto. Hay interés real del gobierno y de la sociedad.</aside>
+</section>
+
+<section data-i="6" id="mercado" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
+<img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#5f6b66">07 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#1f6f62;letter-spacing:3px">MERCADO POTENCIAL</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1100px">Quién paga por limpiar el agua</h2>
+<table style="width:1100px;font-size:28px;border-collapse:collapse">
+<tr><th style="text-align:left;padding:16px 22px;background:#13241f;color:#f4efe6;width:380px">Segmento</th><th style="text-align:left;padding:16px 22px;background:#13241f;color:#f4efe6">Clientes posibles</th></tr>
+<tr><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Gobierno estatal</td><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Secretaría de Pesca y Acuacultura (convenio) y dependencias ambientales</td></tr>
+<tr><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Áreas naturales y presas</td><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Cañón del Sumidero y presas del río Grijalva</td></tr>
+<tr><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Municipios</td><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Ríos urbanos, canales y lagunas</td></tr>
+<tr><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Turismo y empresas</td><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Prestadores turísticos, cooperativas pesqueras y empresas con programas ambientales</td></tr>
+</table>
+<img src="img/comp-officials.jpg" alt="El equipo presentando el prototipo ante autoridades" data-build-in="rise" style="position:absolute;left:1292px;top:160px;width:500px;height:640px;object-fit:cover;border-radius:24px">
+<p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#5f6b66">Primer mercado: Chiapas. Después, ríos y lagunas del sur-sureste del país.</p>
+<img src="img/wm_cascos.png" alt="Marca de agua: modelo 3D con los cascos tipo pontón resaltados" style="position:absolute;left:1290px;top:806px;width:290px;height:231px;object-fit:contain">
+<p style="position:absolute;left:1000px;top:930px;width:270px;font-size:24px;line-height:1.25;text-align:right;color:#5f6b66"><b><span style="color:#e0782a">PIEZA 06</span></b><br>Cascos tipo pontón</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[4:00 – 4:40] ¿Quién paga por esto? Nuestro mercado son las instituciones responsables de mantener limpios los cuerpos de agua. Empezamos por el gobierno del estado, donde ya tenemos un convenio con la Secretaría de Pesca y Acuacultura. Siguen las áreas naturales y las presas, como el Cañón del Sumidero y el río Grijalva; los municipios, que deben limpiar ríos urbanos y lagunas; y el sector turístico, las cooperativas pesqueras y las empresas con programas ambientales. Nuestro primer mercado es Chiapas, y después el sur-sureste del país.</aside>
+</section>
+
+<section data-i="7" id="modelo" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
+<img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#5f6b66">08 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#1f6f62;letter-spacing:3px">MODELO DE NEGOCIO Y ESTRATEGIA COMERCIAL</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1400px">Tres fuentes de ingreso con un mismo robot</h2>
+<div style="display:flex;gap:32px;width:1480px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#fbf8f2;border-radius:24px;border:1px solid #ddd5c6;padding:0px 0px 32px">
+<img src="img/proto-side.jpg" alt="Prototipo CHENEK BALAM visto de lado" style="width:470px;height:170px;object-fit:cover;border-radius:24px">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:700;color:#1f6f62;padding:12px 32px 0px">Venta del robot</h3>
+<p style="font-size:26px;line-height:1.35;padding:0px 32px">Con instalación, capacitación y mantenimiento.</p>
+<p style="font-size:26px;font-weight:700;padding:0px 32px">Desde [$___] por unidad</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#fbf8f2;border-radius:24px;border:1px solid #ddd5c6;padding:0px 0px 32px">
+<img src="img/proto-float.jpg" alt="El robot recolectando basura en una laguna" style="width:470px;height:170px;object-fit:cover;border-radius:24px">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:700;color:#1f6f62;padding:12px 32px 0px">Limpieza por contrato</h3>
+<p style="font-size:26px;line-height:1.35;padding:0px 32px">Operamos el robot y entregamos reporte de kilos.</p>
+<p style="font-size:26px;font-weight:700;padding:0px 32px">[$___] por jornada</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#13241f;color:#f4efe6;border-radius:24px;padding:0px 0px 32px">
+<img src="img/proto-rear.jpg" alt="El prototipo navegando en una laguna visto desde atrás" style="width:470px;height:170px;object-fit:cover;border-radius:24px">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:700;color:#e0782a;padding:12px 32px 0px">Datos del agua</h3>
+<p style="font-size:26px;line-height:1.35;padding:0px 32px">Suscripción con reportes de calidad del agua.</p>
+<p style="font-size:26px;font-weight:700;padding:0px 32px">[$___] al mes</p>
+</div>
+</div>
+<p style="font-size:26px;line-height:1.4;width:1400px"><b>Cómo llegamos al cliente:</b> convenios con gobierno, demostraciones en campo, licitaciones y nuestra presencia en medios y redes.</p>
+<img src="img/wm_prop.png" alt="Marca de agua: modelo 3D con los propulsores sumergibles resaltados" style="position:absolute;left:1290px;top:810px;width:288px;height:230px;object-fit:contain">
+<p style="position:absolute;left:1000px;top:930px;width:270px;font-size:24px;line-height:1.25;text-align:right;color:#5f6b66"><b><span style="color:#e0782a">PIEZA 07</span></b><br>Propulsores sumergibles</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[4:40 – 5:30] Nuestro modelo de negocio tiene tres fuentes de ingreso. Uno: la venta del robot, en sus versiones Normal, Grande y Comercial, con instalación, capacitación y mantenimiento incluidos. Dos: el servicio de limpieza por contrato, donde nosotros operamos el robot y el cliente solo paga por jornada y recibe un reporte de kilos recolectados. Tres: la suscripción a nuestra plataforma de datos de calidad del agua. Para llegar al cliente usamos los convenios con gobierno, demostraciones en campo, licitaciones y la difusión que ya tenemos en medios y redes sociales. [Mencionar aquí los precios que defina el equipo.]</aside>
+</section>
+
+<section data-i="8" id="viabtec" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:-60px;top:200px;width:760px;height:832px;object-fit:contain">
+<img src="img/proto-front.jpg" alt="Dos integrantes del equipo junto al prototipo en el agua" data-build-in="fade" style="position:absolute;left:1180px;top:160px;width:612px;height:440px;object-fit:cover;border-radius:24px">
+<img src="img/constr-frame.jpg" alt="Construcción de la estructura metálica del robot" data-build-in="rise" style="position:absolute;left:1180px;top:624px;width:290px;height:296px;object-fit:cover;border-radius:24px">
+<img src="img/constr-foam.jpg" alt="Modelado en espuma de la cabeza de jaguar" data-build-in="rise" style="position:absolute;left:1494px;top:624px;width:298px;height:296px;object-fit:cover;border-radius:24px">
+<img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#c9c2b4">09 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#e0782a;letter-spacing:3px">VIABILIDAD TÉCNICA Y OPERATIVA</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:960px">Sabemos construirlo, operarlo y mantenerlo</h2>
+<div style="display:flex;flex-direction:column;gap:20px;width:960px">
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Prototipo funcionando:</b> estructura, propulsión eléctrica y recolección ya probadas.</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Equipo completo:</b> mecatrónica, sistemas computacionales y gestión empresarial.</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Fabricación local</b> con componentes que se consiguen en México.</p>
+<p style="font-size:30px;line-height:1.35"><b style="color:#e0782a">Plan técnico por fases</b> de 8 a 10 semanas, con pruebas en cada etapa.</p>
+</div>
+<img src="img/wm_canasta.png" alt="Marca de agua: modelo 3D con la canasta recolectora resaltada" style="position:absolute;left:700px;top:800px;width:290px;height:231px;object-fit:contain">
+<p style="position:absolute;left:400px;top:900px;width:280px;font-size:24px;line-height:1.25;text-align:right;color:#c9c2b4"><b><span style="color:#e0782a">PIEZA 08</span></b><br>Canasta recolectora</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[5:30 – 6:05] En lo técnico y operativo, el proyecto es viable porque ya funciona: la estructura, la propulsión eléctrica y el sistema de recolección están probados. Aquí ven cómo lo construimos nosotros mismos: la estructura metálica y el modelado del jaguar. Somos un equipo multidisciplinario de mecatrónica, sistemas computacionales y gestión empresarial, con el respaldo de nuestros asesores del Tecnológico. Fabricamos aquí con componentes que se consiguen en México, y tenemos un plan técnico por fases de 8 a 10 semanas para integrar la electrónica, los sensores y la telemetría.</aside>
+</section>
+
+<section data-i="9" id="viabeco" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
+<img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#5f6b66">10 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#1f6f62;letter-spacing:3px">VIABILIDAD ECONÓMICA</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1400px">Menos de la mitad del precio de un robot importado</h2>
+<div style="display:flex;gap:40px;width:1460px">
+<table style="width:900px;font-size:30px;border-collapse:collapse">
+<tr><th style="text-align:left;padding:16px 24px;background:#13241f;color:#f4efe6">Inversión inicial</th><th style="text-align:right;padding:16px 24px;background:#13241f;color:#f4efe6">MXN</th></tr>
+<tr><td style="padding:16px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Catamarán y mano de obra</td><td style="text-align:right;padding:16px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$45,000.00</td></tr>
+<tr><td style="padding:16px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Sistema electrónico y sensores</td><td style="text-align:right;padding:16px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$37,603.72</td></tr>
+<tr><td style="padding:16px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Software y plataforma (1 año)</td><td style="text-align:right;padding:16px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$24,940.00</td></tr>
+<tr><td style="padding:16px 24px;font-weight:700;border-top:2px solid #1d2b26;background:#fbf8f2">Total</td><td style="text-align:right;padding:16px 24px;font-weight:700;border-top:2px solid #1d2b26;background:#fbf8f2">$107,543.72</td></tr>
+</table>
+<div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px;background:#13241f;color:#f4efe6;padding:48px;border-radius:24px">
+<p style="font-size:28px;line-height:1.35">Un robot extranjero cuesta desde</p>
+<p style="font-family:'Outfit', Arial, sans-serif;font-size:80px;font-weight:800;color:#e0782a;line-height:1.0">$282,000</p>
+<p style="font-size:28px;line-height:1.35">y no tiene refacciones en México.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#5f6b66">Montos con IVA. Robot extranjero: 15,000 dólares a 18.80 pesos por dólar. Versión premium con navegación autónoma: $226,354.48.</p>
+<img src="img/wm_cara.png" alt="Marca de agua: modelo 3D con la cabeza de jaguar resaltada" style="position:absolute;left:1340px;top:770px;width:236px;height:188px;object-fit:contain">
+<p style="position:absolute;left:1050px;top:850px;width:270px;font-size:24px;line-height:1.25;text-align:right;color:#5f6b66"><b><span style="color:#e0782a">PIEZA 09</span></b><br>Cabeza de jaguar</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[6:05 – 6:55] En lo económico, construir y poner a operar un CHENEK BALAM cuesta 107 mil 543 pesos: 45 mil del catamarán con su mano de obra, 37 mil 600 del sistema electrónico y los sensores, y casi 25 mil del software y la plataforma durante el primer año. Un robot extranjero cuesta desde 282 mil pesos, y sin refacciones en el país. Es decir, ofrecemos una solución por menos de la mitad del precio, con soporte local. Además, tenemos ya diseñada una versión premium con navegación autónoma para cuando el mercado la requiera. [Si el equipo define precio de venta y punto de equilibrio, mencionarlos aquí.]</aside>
+</section>
+
+<section data-i="10" id="impacto" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
+<img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#5f6b66">11 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#1f6f62;letter-spacing:3px">IMPACTO Y EMPLEO</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1040px">Agua más limpia, empleos nuevos y orgullo chiapaneco</h2>
+<div style="display:flex;flex-direction:column;gap:18px;width:1040px">
+<div style="display:flex;gap:28px;align-items:center;background:#fbf8f2;padding:24px 32px;border-radius:20px;border:1px solid #ddd5c6">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:32px;font-weight:700;color:#1f6f62;width:200px">Ambiental</h3>
+<p style="font-size:26px;line-height:1.35;flex:1">Menos plástico en ríos, lagunas y en el Sumidero, sin emisiones ni ruido.</p>
+</div>
+<div style="display:flex;gap:28px;align-items:center;background:#fbf8f2;padding:24px 32px;border-radius:20px;border:1px solid #ddd5c6">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:32px;font-weight:700;color:#1f6f62;width:200px">Social</h3>
+<p style="font-size:26px;line-height:1.35;flex:1">Nadie arriesga su salud en el agua y las comunidades conocen la calidad de su agua.</p>
+</div>
+<div style="display:flex;gap:28px;align-items:center;background:#13241f;color:#f4efe6;padding:24px 32px;border-radius:20px">
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:32px;font-weight:700;color:#e0782a;width:200px">Económico</h3>
+<p style="font-size:26px;line-height:1.35;flex:1">Protege la pesca y el turismo, dos motores de la economía de Chiapas.</p>
+</div>
+</div>
+<p style="font-size:26px;line-height:1.4;width:1040px"><b>Empleos que genera:</b> fabricación y ensamble, operación en campo, mantenimiento técnico, software y ventas, con talento formado en Chiapas.</p>
+<img src="img/proto-float.jpg" alt="CHENEK BALAM recolectando botellas en una laguna" data-build-in="rise" style="position:absolute;left:1232px;top:160px;width:560px;height:680px;object-fit:cover;border-radius:24px">
+<img src="img/wm_completo.png" alt="Marca de agua: modelo 3D completo de CHENEK BALAM" style="position:absolute;left:860px;top:820px;width:280px;height:223px;object-fit:contain">
+<p style="position:absolute;left:560px;top:920px;width:280px;font-size:24px;line-height:1.25;text-align:right;color:#5f6b66"><b><span style="color:#e0782a">MODELO 3D</span></b><br>Todas las piezas integradas</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[6:55 – 7:35] El impacto es triple. Ambiental: menos plástico en nuestros ríos y en el Sumidero, con un robot eléctrico que no contamina ni hace ruido. Social: nadie tiene que arriesgar su salud metiéndose al agua, y las comunidades obtienen información sobre la calidad de su agua. Y económico: protegemos la pesca y el turismo. Cada robot que se fabrica y se opera genera empleos: en fabricación y ensamble, en la operación en campo, en mantenimiento, en software y en ventas, todo con talento formado aquí en Chiapas.</aside>
+</section>
+
+<section data-i="11" id="crecimiento" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
+<img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
+<p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#c9c2b4">12 / 13</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#e0782a;letter-spacing:3px">POTENCIAL DE CRECIMIENTO</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1400px">De un prototipo a una empresa chiapaneca de robótica ambiental</h2>
+<div style="display:flex;gap:24px;width:1480px">
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;border-radius:24px;border:2px solid #e0782a;padding:0px 0px 28px">
+<img src="img/proto-side.jpg" alt="Prototipo actual de CHENEK BALAM" style="width:348px;height:180px;object-fit:cover;border-radius:22px">
+<p style="font-size:24px;font-weight:700;color:#e0782a;padding:8px 28px 0px">HOY</p>
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:32px;font-weight:700;padding:0px 28px">Prototipo Normal</h3>
+<p style="font-size:24px;line-height:1.35;color:#d9d2c3;padding:0px 28px">120 kg por sesión en ríos y canales</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;border-radius:24px;border:2px solid #5d7a70;padding:0px 0px 28px">
+<img src="img/proto-stand.jpg" alt="El prototipo con su electrónica en exhibición" style="width:348px;height:180px;object-fit:cover;border-radius:22px">
+<p style="font-size:24px;font-weight:700;color:#e0782a;padding:8px 28px 0px">PASO 1</p>
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:32px;font-weight:700;padding:0px 28px">Robot conectado</h3>
+<p style="font-size:24px;line-height:1.35;color:#d9d2c3;padding:0px 28px">Sensores, telemetría y app en 8 a 10 semanas</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;border-radius:24px;border:2px solid #5d7a70;padding:0px 0px 28px">
+<img src="img/constr-paint.jpg" alt="Construcción del modelo Grande en fibra de vidrio" style="width:348px;height:180px;object-fit:cover;border-radius:22px">
+<p style="font-size:24px;font-weight:700;color:#e0782a;padding:8px 28px 0px">PASO 2</p>
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:32px;font-weight:700;padding:0px 28px">Modelo Grande</h3>
+<p style="font-size:24px;line-height:1.35;color:#d9d2c3;padding:0px 28px">De 500 kg a 2 toneladas para lagos, presas y cañones</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:10px;border-radius:24px;border:2px solid #5d7a70;padding:0px 0px 28px">
+<img src="img/proto-front.jpg" alt="El equipo con el prototipo en el agua" style="width:348px;height:180px;object-fit:cover;border-radius:22px">
+<p style="font-size:24px;font-weight:700;color:#e0782a;padding:8px 28px 0px">PASO 3</p>
+<h3 style="font-family:'Outfit', Arial, sans-serif;font-size:32px;font-weight:700;padding:0px 28px">Navegación autónoma</h3>
+<p style="font-size:24px;line-height:1.35;color:#d9d2c3;padding:0px 28px">Venta y servicio en el sur-sureste del país</p>
+</div>
+</div>
+<img src="img/wm_completo.png" alt="Marca de agua: modelo 3D completo de CHENEK BALAM" style="position:absolute;left:1310px;top:836px;width:264px;height:210px;object-fit:contain">
+<p style="position:absolute;left:1020px;top:940px;width:270px;font-size:24px;line-height:1.25;text-align:right;color:#c9c2b4"><b><span style="color:#e0782a">MODELO 3D</span></b><br>Listo para escalar</p>
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="fade" style="position:absolute;left:1600px;top:856px;width:260px;height:200px;object-fit:contain">
+<aside>[7:35 – 8:10] ¿Hacia dónde crecemos? Hoy tenemos el prototipo Normal, que recoge 120 kilos por sesión. El primer paso es convertirlo en un robot conectado, con sensores, telemetría y aplicación, en 8 a 10 semanas. El segundo es el modelo Grande, que ya estamos construyendo en fibra de vidrio, con capacidad de 500 kilos a 2 toneladas para lagos, presas y cañones. Y el tercero es la navegación autónoma, para vender y ofrecer el servicio en todo el sur-sureste. Nuestra meta es convertirnos en una empresa chiapaneca de robótica ambiental.</aside>
+</section>
+
+<section data-i="12" id="cierre" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 128px;display:flex;flex-direction:column;justify-content:center;gap:36px">
+<img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:-80px;top:180px;width:820px;height:898px;object-fit:contain">
+<img src="img/proto-team.jpg" alt="Integrantes del equipo recolectando basura con el robot en la orilla" style="position:absolute;left:1120px;top:0px;width:800px;height:1080px;object-fit:cover">
+<img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
+<p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
+<div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#e0782a;letter-spacing:3px">GRACIAS</p></div>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:88px;font-weight:800;line-height:1.05;width:900px">Cuidemos el agua de Chiapas con tecnología hecha en Chiapas</h2>
+<p style="font-size:36px;line-height:1.35;width:880px;color:#e0782a;font-weight:700">Estamos listos para sus preguntas.</p>
+<p style="font-size:28px;line-height:1.4;width:880px;color:#d9d2c3">Equipo CHENEK BALAM · Instituto Tecnológico de Tuxtla Gutiérrez<br>Asesores: Juan Humberto Carpio Tovilla y Jorge Arturo Sarmiento Torres</p>
+<img src="img/wm_completo.png" alt="Marca de agua: modelo 3D completo de CHENEK BALAM" style="position:absolute;left:600px;top:856px;width:260px;height:207px;object-fit:contain">
+<img id="robot3d" src="img/robot3d-slow.webp" alt="Modelo 3D de CHENEK BALAM girando" data-build-in="rise" style="position:absolute;left:1000px;top:700px;width:440px;height:338px;object-fit:contain">
+<aside>[8:10 – 8:30] CHENEK BALAM es una solución real a un problema que vemos todos los días en nuestros ríos. Ya demostramos que funciona; ahora queremos convertirlo en una empresa que genere empleo y cuide el agua de Chiapas con tecnología hecha en Chiapas. Muchas gracias. Estamos listos para sus preguntas.</aside>
+</section>
+
+</div>
+<div id="notes"></div>
+<div id="bar"><button onclick="go(-1)">&#9664; Anterior</button><span id="num"></span><button onclick="go(1)">Siguiente &#9654;</button><button onclick="toggleNotes()">Notas (N)</button><button onclick="fs()">Pantalla completa (F)</button></div>
+<script>
+const S=[...document.querySelectorAll('section')];let cur=0;
+function fit(){const st=document.getElementById('stage');const k=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform=`scale(${k}) translate(-50%,-50%)`;st.style.transformOrigin='0 0';st.style.left='50%';st.style.top='50%';st.style.transform=`translate(-50%,-50%) scale(${k})`;st.style.transformOrigin='center center';}
+function show(n){cur=Math.max(0,Math.min(S.length-1,n));S.forEach((s,i)=>{s.classList.toggle('on',i===cur);s.classList.toggle('prev',i<cur);});document.getElementById('num').textContent=(cur+1)+' / '+S.length;const a=S[cur].querySelector('aside');document.getElementById('notes').textContent=a?a.textContent:'';location.hash=cur+1;}
+function go(d){show(cur+d);}
+function toggleNotes(){const n=document.getElementById('notes');n.style.display=n.style.display==='block'?'none':'block';}
+function fs(){if(!document.fullscreenElement)document.documentElement.requestFullscreen();else document.exitFullscreen();}
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' ','Enter'].includes(e.key))go(1);else if(['ArrowLeft','PageUp','Backspace'].includes(e.key))go(-1);else if(e.key==='f'||e.key==='F')fs();else if(e.key==='n'||e.key==='N')toggleNotes();else if(e.key==='Home')show(0);else if(e.key==='End')show(S.length-1);});
+let tx=null;addEventListener('touchstart',e=>tx=e.touches[0].clientX);addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)go(dx<0?1:-1);tx=null;});
+document.getElementById('stage').addEventListener('click',e=>{go(e.clientX>innerWidth/2?1:-1);});
+addEventListener('resize',fit);fit();show((parseInt(location.hash.slice(1))||1)-1);
+</script></body></html>
