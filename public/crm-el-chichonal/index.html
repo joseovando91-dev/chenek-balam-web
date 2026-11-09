@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CRM El Chichonal · Indicadores clave</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f1ea; --card:#fffdf8; --ink:#1f2a24; --muted:#6b736d; --line:#e2ddd2;
+  --forest:#1f4d3a; --forest2:#2f6b52; --lava:#d4572a; --sulfur:#e2a93b; --lagoon:#2a8c8c;
+  --ok:#2f7d4f; --warn:#c98a12; --bad:#b83a2c;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#121714;--card:#1a211d;--ink:#e9ece6;--muted:#9aa49d;--line:#2c3630;--forest:#6fbf96;--forest2:#4f9c79;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Outfit,system-ui,sans-serif;font-size:15px;line-height:1.45}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+header.top{background:linear-gradient(135deg,#1f4d3a 0%,#173a2c 60%,#3a2a1c 100%);color:#f6f2e8;padding:22px 18px 0}
+.top-inner{max-width:1180px;margin:0 auto}
+.brand{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.logo{width:46px;height:46px;flex:none}
+.brand h1{font-size:clamp(20px,4vw,28px);margin:0;font-weight:700;letter-spacing:-.01em}
+.brand p{margin:2px 0 0;opacity:.8;font-size:13px}
+.badge{display:inline-block;font-size:11px;padding:3px 8px;border-radius:99px;background:rgba(255,255,255,.14);margin-right:6px}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;margin-top:18px;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs button{flex:none;border:0;background:transparent;color:#d9e3dc;font:inherit;font-weight:500;padding:11px 14px;border-radius:10px 10px 0 0;cursor:pointer}
+nav.tabs button.on{background:var(--bg);color:var(--ink)}
+main{max-width:1180px;margin:0 auto;padding:18px}
+section.view{display:none}
+section.view.on{display:block}
+.grid{display:grid;gap:14px}
+.kpis{grid-template-columns:repeat(auto-fill,minmax(170px,1fr))}
+.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.card h2{font-size:16px;margin:0 0 4px;font-weight:600}
+.card h3{font-size:14px;margin:0 0 8px;font-weight:600}
+.sub{color:var(--muted);font-size:12.5px;margin:0 0 12px}
+.kpi .lbl{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.kpi .val{font-size:clamp(18px,5.2vw,24px);overflow-wrap:anywhere;font-weight:700;margin:4px 0 2px;letter-spacing:-.01em}
+.kpi .note{font-size:12px;color:var(--muted)}
+.kpi.accent{border-left:4px solid var(--forest2)}
+.kpi.lava{border-left:4px solid var(--lava)}
+.kpi.sulfur{border-left:4px solid var(--sulfur)}
+.kpi.lagoon{border-left:4px solid var(--lagoon)}
+.pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600}
+.pill.ok{background:#dff1e5;color:var(--ok)} .pill.warn{background:#fbefd3;color:#8a5d00} .pill.bad{background:#f8dcd7;color:var(--bad)}
+@media (prefers-color-scheme: dark){.pill.ok{background:#1f3a2a;color:#8fd6a9}.pill.warn{background:#3d3018;color:#f0c46a}.pill.bad{background:#3f1f1a;color:#f19a8c}}
+.dictamen{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:14px 16px;border-radius:var(--r);margin-bottom:14px;font-weight:600}
+.dictamen.ok{background:#e3f2e8;color:#1d5b37}.dictamen.warn{background:#fbf0d6;color:#7a5200}.dictamen.bad{background:#f9e0db;color:#8e2a1f}
+@media (prefers-color-scheme: dark){.dictamen.ok{background:#1f3a2a;color:#a6e3bd}.dictamen.warn{background:#3d3018;color:#f3cf86}.dictamen.bad{background:#3f1f1a;color:#f5ada2}}
+.dictamen small{font-weight:400;opacity:.85}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{padding:8px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+.meter{height:10px;border-radius:99px;background:var(--line);overflow:hidden;margin:6px 0 2px}
+.meter i{display:block;height:100%;border-radius:99px;background:var(--forest2)}
+.inputs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+label.fld{display:flex;flex-direction:column;gap:4px;font-size:12.5px;color:var(--muted)}
+input[type=number],input[type=text],select{font:inherit;color:var(--ink);background:#fff8dd;border:1px solid #e6d79a;border-radius:10px;padding:9px 10px;width:100%}
+@media (prefers-color-scheme: dark){input[type=number],input[type=text],select{background:#2a2818;border-color:#58502a}}
+input.err{border-color:var(--bad);background:#fde5e1}
+input[type=range]{width:100%;accent-color:var(--lava)}
+.btn{font:inherit;font-weight:600;border:0;border-radius:10px;padding:9px 14px;background:var(--forest);color:#fff;cursor:pointer}
+@media (prefers-color-scheme: dark){.btn{color:#0f1a14}}
+.btn.ghost{background:transparent;color:var(--forest);border:1px solid var(--line)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.matrix{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:"JetBrains Mono",monospace;font-size:13px}
+.mat{display:grid;gap:4px 14px;padding:6px 12px;border-left:2px solid var(--ink);border-right:2px solid var(--ink);border-radius:6px}
+.mat span{text-align:right}
+.chart{width:100%;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 8px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity .1s;z-index:5}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.note-demo{font-size:12px;background:#fff3d6;color:#7a5200;border-radius:10px;padding:8px 10px;margin-bottom:12px}
+@media (prefers-color-scheme: dark){.note-demo{background:#3a2f17;color:#f0cf8a}}
+/* Árbol */
+.tree,.tree ul{list-style:none;margin:0;padding:0}
+.tree ul{margin-left:22px;padding-left:16px;border-left:2px solid var(--line)}
+.tree li{position:relative;padding:6px 0}
+.tree ul>li::before{content:"";position:absolute;left:-16px;top:26px;width:14px;border-top:2px solid var(--line)}
+.node{display:inline-flex;flex-direction:column;gap:2px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 12px;min-width:200px;max-width:100%;cursor:default}
+.node.root{background:var(--forest);color:#fff;border-color:var(--forest)}
+@media (prefers-color-scheme: dark){.node.root{color:#0f1a14}}
+.node.pk{border-left:5px solid var(--c)}
+.node .t{font-weight:600;font-size:14px}
+.node .d{font-size:12.5px;color:var(--muted)}
+.node.root .d{color:inherit;opacity:.85}
+.node.root .chip{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3);color:inherit}
+.node .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.chip{font-size:11.5px;padding:2px 8px;border-radius:99px;background:var(--bg);border:1px solid var(--line)}
+.tree details>summary{list-style:none;cursor:pointer}
+.tree details>summary::-webkit-details-marker{display:none}
+.tree details>summary .node::after{content:"▾ ver ramas";font-size:11px;color:var(--muted);margin-top:4px}
+.tree details:not([open])>summary .node::after{content:"▸ ver ramas"}
+.stage{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.stage .col{background:var(--bg);border-radius:12px;padding:10px}
+.stage .col h4{margin:0 0 8px;font-size:13px;display:flex;justify-content:space-between}
+.lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-bottom:8px;font-size:13px}
+.lead b{display:block}
+.lead .row{justify-content:space-between;margin-top:4px}
+.lead select{padding:4px 6px;font-size:12px;width:auto}
+footer{max-width:1180px;margin:0 auto;padding:6px 18px 30px;color:var(--muted);font-size:12px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="top-inner">
+  <div class="brand">
+   <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#2f6b52"/><path d="M6 38 L19 18 L23 22 L27 16 L42 38 Z" fill="#173a2c"/><ellipse cx="25" cy="19" rx="4" ry="1.6" fill="#5fc2b8"/><path d="M22 12 q2-4 0-7 M27 11 q2-3 1-6" stroke="#e2a93b" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+   <div>
+    <h1>CRM · Servicios Ecoturísticos El Chichonal</h1>
+    <p>Chapultenango, Chiapas · Tablero de indicadores clave y herramienta de decisión</p>
+   </div>
+  </div>
+  <div style="margin-top:10px"><span class="badge">Álgebra Lineal · ApS</span><span class="badge">Equipo 5 · ITTG</span><span class="badge">Datos: Semanas 5–10</span></div>
+  <nav class="tabs" id="tabs">
+   <button data-v="resumen" class="on">Resumen</button>
+   <button data-v="planeador">Planeador matricial</button>
+   <button data-v="rutas">Rutas de transporte</button>
+   <button data-v="costos">Costos y escenarios</button>
+   <button data-v="redes">Redes sociales</button>
+   <button data-v="clientes">Clientes y convenios</button>
+   <button data-v="proyecto">Proyecto ApS</button>
+  </nav>
+ </div>
+</header>
+
+<main>
+<!-- ============ RESUMEN ============ -->
+<section class="view on" id="resumen">
+ <div class="dictamen" id="dictamenTop"></div>
+ <div class="grid kpis" id="kpiGrid"></div>
+ <div class="grid two" style="margin-top:14px">
+  <div class="card" id="cardMix">
+   <h2>Margen de contribución por paquete</h2>
+   <p class="sub">Plan mensual actual frente a los costos fijos (línea punteada).</p>
+   <div class="chart" id="chMix"></div>
+  </div>
+  <div class="card" id="cardRec">
+   <h2>Uso de recursos</h2>
+   <p class="sub">Restricciones del modelo: jornadas de guía ≤ 26 y despachos de transporte ≤ 16 al mes.</p>
+   <div id="resMeters"></div>
+   <h3 style="margin-top:16px">Plan entero recomendado</h3>
+   <p class="sub" id="recTxt"></p>
+   <button class="btn ghost" id="useRec">Usar este plan en el planeador</button>
+  </div>
+ </div>
+ <div class="grid two" style="margin-top:14px">
+  <div class="card" id="cardSocialMini">
+   <h2>Vistas en redes sociales</h2>
+   <p class="sub">Tendencia mensual total (datos de ejemplo, ver pestaña Redes).</p>
+   <div class="chart" id="chSocialMini"></div>
+  </div>
+  <div class="card" id="cardPipeMini">
+   <h2>Embudo comercial</h2>
+   <p class="sub">Órdenes potenciales por etapa (ver pestaña Clientes).</p>
+   <div id="pipeMini"></div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ PLANEADOR ============ -->
+<section class="view" id="planeador">
+ <div class="grid two">
+  <div class="card" id="cardInputs">
+   <h2>Órdenes del mes</h2>
+   <p class="sub">Celdas amarillas editables. Solo se aceptan enteros ≥ 0 (corrige las fallas F1–F3 de la V1).</p>
+   <div class="inputs" id="orderInputs"></div>
+   <div class="row" style="margin-top:12px">
+    <span class="sub" style="margin:0">Cargar caso de prueba:</span>
+    <select id="caseSel" style="width:auto"></select>
+   </div>
+  </div>
+  <div class="card" id="cardDict">
+   <h2>Dictamen del plan</h2>
+   <div class="dictamen" id="dictamenPlan" style="margin:8px 0"></div>
+   <table id="tblPlan"></table>
+  </div>
+ </div>
+ <div class="card" style="margin-top:14px" id="cardMatrix">
+  <h2>Modelo matricial: A · x</h2>
+  <p class="sub">El renglón 1 de A son los márgenes por orden; el 2, jornadas de guía por orden; el 3, despachos de transporte por orden. El producto punto de cada renglón con el vector de órdenes x da el resultado.</p>
+  <div class="matrix" id="matrixView"></div>
+  <p class="sub" style="margin-top:12px" id="matrixNote"></p>
+ </div>
+ <div class="card" style="margin-top:14px" id="cardBE">
+  <h2>Punto de equilibrio por paquete</h2>
+  <p class="sub">Órdenes necesarias <b>si solo se vendiera ese paquete</b>: CF ÷ margen por orden.</p>
+  <div class="scroll"><table id="tblBE"></table></div>
+ </div>
+</section>
+
+<!-- ============ RUTAS ============ -->
+<section class="view" id="rutas">
+ <div class="card" id="cardTree">
+  <h2>Árbol de rutas de transporte</h2>
+  <p class="sub">Desde la base operativa en Chapultenango se despacha cada ruta según el paquete. Las cifras de cada rama se recalculan con el plan del Planeador. Toca un nodo para abrir o cerrar sus ramas.</p>
+  <ul class="tree" id="tree"></ul>
+ </div>
+ <div class="grid two" style="margin-top:14px">
+  <div class="card" id="cardRouteShare">
+   <h2>Despachos y guías por ruta</h2>
+   <p class="sub">Participación de cada ruta en los recursos del mes.</p>
+   <div class="chart" id="chRoutes"></div>
+  </div>
+  <div class="card" id="cardRouteTbl">
+   <h2>Rentabilidad por despacho</h2>
+   <p class="sub">Margen que deja cada unidad de transporte enviada. Sirve para priorizar rutas cuando el transporte es el cuello de botella.</p>
+   <div class="scroll"><table id="tblRoutes"></table></div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ COSTOS ============ -->
+<section class="view" id="costos">
+ <div class="grid two">
+  <div class="card" id="cardCF">
+   <h2>Estructura de costos fijos</h2>
+   <p class="sub">Costos fijos mensuales (CF) capturados en la hoja Parametros.</p>
+   <div class="chart" id="chCF"></div>
+   <table id="tblCF" style="margin-top:8px"></table>
+  </div>
+  <div class="card" id="cardUnit">
+   <h2>Precio, costo y margen por persona</h2>
+   <p class="sub">Ajustados con los controles de escenario de abajo.</p>
+   <div class="scroll"><table id="tblUnit"></table></div>
+  </div>
+ </div>
+ <div class="card" style="margin-top:14px" id="cardScen">
+  <h2>Simulador de escenarios</h2>
+  <p class="sub">Variación porcentual de precios y costos variables aplicada al plan actual.</p>
+  <div class="inputs">
+   <label class="fld">Variación de precios: <b id="pLbl">0%</b><input type="range" id="pAdj" min="-20" max="20" step="1" value="0"></label>
+   <label class="fld">Variación de costos variables: <b id="cLbl">0%</b><input type="range" id="cAdj" min="-20" max="20" step="1" value="0"></label>
+  </div>
+  <div class="row" style="margin-top:8px"><button class="btn ghost" id="resetAdj">Restablecer</button></div>
+  <h3 style="margin-top:16px">Los 7 escenarios de sensibilidad</h3>
+  <div class="chart" id="chScen"></div>
+  <div class="scroll"><table id="tblScen"></table></div>
+ </div>
+</section>
+
+<!-- ============ REDES ============ -->
+<section class="view" id="redes">
+ <div class="note-demo"><b>Datos de ejemplo.</b> Los documentos del equipo no incluyen métricas de redes sociales. Sustituye estas cifras por las reales (Meta Business Suite para Facebook/Instagram y TikTok Studio) directamente en la tabla de abajo; el tablero se recalcula al instante.</div>
+ <div class="grid kpis" id="socKpis"></div>
+ <div class="card" style="margin-top:14px" id="cardViews">
+  <h2>Vistas mensuales por red</h2>
+  <p class="sub">Alcance de publicaciones y videos.</p>
+  <div class="chart" id="chViews"></div>
+  <div class="legend" id="lgViews"></div>
+ </div>
+ <div class="grid two" style="margin-top:14px">
+  <div class="card" id="cardFunnel">
+   <h2>Del alcance a la reservación</h2>
+   <p class="sub">Último mes: vistas → interacciones → mensajes de consulta → órdenes confirmadas.</p>
+   <div id="socFunnel"></div>
+  </div>
+  <div class="card" id="cardSocTbl">
+   <h2>Captura de métricas</h2>
+   <p class="sub">Vistas por mes y red, más consultas y órdenes.</p>
+   <div class="scroll"><table id="tblSoc"></table></div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ CLIENTES ============ -->
+<section class="view" id="clientes">
+ <div class="note-demo"><b>Prospectos de ejemplo.</b> Siguen el Modelo Modular Multicartera con convenios institucionales de la Semana 7. Reemplázalos por clientes reales; no registres datos personales de turistas ni de menores (plan de ética, Semana 8).</div>
+ <div class="grid kpis" id="cliKpis"></div>
+ <div class="card" style="margin-top:14px" id="cardPipe">
+  <h2>Embudo de convenios</h2>
+  <p class="sub">Cambia la etapa de cada prospecto con el selector.</p>
+  <div class="stage" id="stages"></div>
+ </div>
+ <div class="card" style="margin-top:14px" id="cardAdd">
+  <h2>Agregar prospecto</h2>
+  <form id="addLead" class="inputs" style="align-items:end">
+   <label class="fld">Institución / grupo<input type="text" id="lName" required placeholder="p. ej. Preparatoria de Pichucalco"></label>
+   <label class="fld">Paquete<select id="lPk"><option value="A">A · Académico / Escolar</option><option value="B">B · Ecoturismo Estándar</option><option value="C">C · Expedición Científica</option></select></label>
+   <label class="fld">Órdenes estimadas<input type="number" id="lOrd" min="1" step="1" value="1"></label>
+   <button class="btn" type="submit">Agregar</button>
+  </form>
+ </div>
+</section>
+
+<!-- ============ PROYECTO ============ -->
+<section class="view" id="proyecto">
+ <div class="grid kpis" id="prjKpis"></div>
+ <div class="grid two" style="margin-top:14px">
+  <div class="card" id="cardTests">
+   <h2>Pruebas de la V1 (Semana 10)</h2>
+   <p class="sub">Margen de cada caso frente a CF. 7 de 10 cumplen; P8–P10 son entradas inválidas que la V1 no rechazaba.</p>
+   <div class="chart" id="chTests"></div>
+  </div>
+  <div class="card" id="cardBudget">
+   <h2>Presupuesto del servicio</h2>
+   <p class="sub">Plan de implementación, Semana 8.</p>
+   <div class="scroll"><table id="tblBudget"></table></div>
+  </div>
+ </div>
+ <div class="grid two" style="margin-top:14px">
+  <div class="card" id="cardFails">
+   <h2>Fallas priorizadas V1 → V2</h2>
+   <div class="scroll"><table id="tblFails"></table></div>
+  </div>
+  <div class="card" id="cardRisk">
+   <h2>Matriz de riesgos</h2>
+   <div class="scroll"><table id="tblRisk"></table></div>
+  </div>
+ </div>
+</section>
+</main>
+<footer>Fuentes: S8 Plan de Implementación, S9 Bitácora 1 (V0.3) y S10 V1 y Pruebas — Equipo 5, Álgebra Lineal, ITTG 2026. Parámetros de costos y precios: Semana 6 (pendientes de confirmar con el socio). Las secciones de Redes sociales y Clientes usan datos de ejemplo editables.</footer>
+
+<div class="tip" id="tip"></div>
+
+<script>
+/* ======================= DATOS ======================= */
+const CF_ITEMS=[{k:"Nómina fija",v:103500.00},{k:"Depreciaciones",v:5716.67},{k:"Cargos indirectos",v:18891.66}];
+const PK={
+ A:{n:"A · Académico / Escolar",short:"Académico",pax:25,price:900,cv:550,g:2,t:2,c:"#2a8c8c",ruta:"Ruta escolar"},
+ B:{n:"B · Ecoturismo Estándar Certificado",short:"Ecoturismo",pax:20,price:1400,cv:800,g:2,t:1,c:"#e2a93b",ruta:"Ruta ecoturística"},
+ C:{n:"C · Expedición Científica",short:"Científica",pax:15,price:2400,cv:1150,g:3,t:1,c:"#d4572a",ruta:"Ruta de expedición"}
+};
+const KEYS=["A","B","C"];
+const LIM={g:26,t:16};
+const CASES=[
+ ["P1 · Plan base (4-5-2)",[4,5,2]],["P2 · Sin órdenes",[0,0,0]],["P3 · Solo A (6)",[6,0,0]],["P4 · Alternativa 3-6-2",[3,6,2]],
+ ["P5 · +1 C sobre base",[4,5,3]],["P6 · +1 A sobre base",[5,5,2]],["P7 · Solo C (7)",[0,0,7]]
+];
+const TESTS=[
+ {id:"P1",m:132500,ok:true,d:"Factible"},{id:"P2",m:0,ok:true,d:"No cubre CF"},{id:"P3",m:52500,ok:true,d:"No cubre CF"},
+ {id:"P4",m:135750,ok:true,d:"Factible"},{id:"P5",m:151250,ok:true,d:"Excede recursos"},{id:"P6",m:141250,ok:true,d:"Excede recursos"},
+ {id:"P7",m:131250,ok:true,d:"Factible"},{id:"P8",m:136875,ok:false,d:"Aceptó 4.5"},{id:"P9",m:143750,ok:false,d:"Aceptó −5"},{id:"P10",m:97500,ok:false,d:"Ignoró texto"}
+];
+const BUDGET=[["Excel / Google Sheets",0,0],["Computadoras (4, propias)",0,0],["Internet y nube",0,0],["Impresión del manual (6 hojas)",90,0],["Memoria USB",120,0],["Traslado Tuxtla–Chapultenango (2 viajes)",2400,0],["Alimentos (8 comidas)",1200,0]];
+const FAILS=[["F1","Acepta órdenes decimales","Alta",1,"Solo enteros ≥ 0"],["F2","Acepta negativos → «factible» falso","Alta",1,"No permitir negativos"],["F3","Ignora texto sin avisar","Media",2,"Alerta en celdas no numéricas"],["F4","No advierte margen de seguridad de 3.4%","Media",2,"Alerta «AJUSTADO» < 5%"],["F5","Fórmulas sin proteger","Media",3,"Proteger hojas"],["F6","Sin instrucciones en el libro","Baja",3,"Leyenda y manual"]];
+const RISKS=[["Socio no comparte datos reales","Media","Alta"],["Precios o costos desactualizados","Alta","Media"],["Errores de fórmula o captura","Media","Alta"],["Plan factible con poco margen (3.4%)","Alta","Alta"],["Retrasos por clima o carretera","Media","Media"],["Seguridad en el traslado","Baja","Alta"],["Exposición de datos o menores","Baja","Alta"],["El socio no usa Excel","Media","Media"]];
+const MONTHS=["Jun","Jul","Ago","Sep","Oct","Nov"];
+let SOC={ // datos de ejemplo
+ fb:[4200,5100,5900,7400,9800,12600],
+ ig:[2100,2900,3600,4800,6900,9300],
+ tt:[1500,3800,5200,9100,14800,21500],
+ inter:[310,420,515,760,1090,1520],
+ msgs:[18,24,29,41,57,74],
+ ord:[3,4,5,7,9,11]
+};
+const NET=[{k:"fb",n:"Facebook",c:"#3b6fd8"},{k:"ig",n:"Instagram",c:"#c2477a"},{k:"tt",n:"TikTok",c:"#1f2a24"}];
+let LEADS=[
+ {n:"Secundaria técnica (ejemplo)",pk:"A",o:2,s:0},{n:"Bachillerato regional (ejemplo)",pk:"A",o:2,s:1},
+ {n:"Agencia de viajes de Tuxtla (ejemplo)",pk:"B",o:3,s:2},{n:"Club de senderismo (ejemplo)",pk:"B",o:2,s:3},
+ {n:"Facultad de Ciencias de la Tierra (ejemplo)",pk:"C",o:1,s:2},{n:"Centro de investigación vulcanológica (ejemplo)",pk:"C",o:1,s:1},
+ {n:"Escuela primaria con tutores (ejemplo)",pk:"A",o:1,s:3},{n:"Grupo corporativo (ejemplo)",pk:"B",o:1,s:0}
+];
+const STAGES=["Prospecto","Contactado","Cotización","Confirmado"];
+
+/* ======================= ESTADO ======================= */
+let X=[4,5,2], pAdj=0, cAdj=0, invalid=false;
+const CF=CF_ITEMS.reduce((s,i)=>s+i.v,0);
+const fm=n=>n.toLocaleString("es-MX",{style:"currency",currency:"MXN",maximumFractionDigits:2,minimumFractionDigits:2});
+const f0=n=>n.toLocaleString("es-MX",{maximumFractionDigits:0});
+const fp=(n,d=1)=>(n*100).toLocaleString("es-MX",{maximumFractionDigits:d,minimumFractionDigits:d})+"%";
+const $=id=>document.getElementById(id);
+
+function unit(k,p=pAdj,c=cAdj){const P=PK[k];const pr=P.price*(1+p/100),cv=P.cv*(1+c/100);return{pr,cv,mu:pr-cv,mo:P.pax*(pr-cv)};}
+function evalPlan(x,p=pAdj,c=cAdj){
+ const r={x,ing:0,cvT:0,mar:0,g:0,t:0,pax:0,by:{}};
+ KEYS.forEach((k,i)=>{const u=unit(k,p,c),P=PK[k],n=x[i];
+  const b={n,ing:n*P.pax*u.pr,cv:n*P.pax*u.cv,mar:n*u.mo,g:n*P.g,t:n*P.t,pax:n*P.pax,mo:u.mo};
+  r.by[k]=b;r.ing+=b.ing;r.cvT+=b.cv;r.mar+=b.mar;r.g+=b.g;r.t+=b.t;r.pax+=b.pax;});
+ r.sup=r.mar-CF;r.cob=CF?r.mar/CF:0;r.seg=CF?r.sup/CF:0;r.ord=x.reduce((a,b)=>a+b,0);
+ r.exc=r.g>LIM.g||r.t>LIM.t;
+ r.status=r.exc?"exc":(r.sup<0?"def":(r.seg<0.05?"adj":"ok"));
+ return r;
+}
+function best(p=pAdj,c=cAdj){let b=null;
+ for(let a=0;a<=13;a++)for(let bb=0;bb<=16;bb++)for(let cc=0;cc<=16;cc++){
+  if(2*a+2*bb+3*cc>LIM.g||2*a+bb+cc>LIM.t)continue;
+  const m=a*unit("A",p,c).mo+bb*unit("B",p,c).mo+cc*unit("C",p,c).mo;
+  if(!b||m>b.m)b={x:[a,bb,cc],m};}
+ return b;}
+const DICT={
+ ok:["ok","PLAN FACTIBLE","Cubre costos fijos, respeta recursos y tiene colchón ≥ 5%."],
+ adj:["warn","FACTIBLE · AJUSTADO","Cubre costos fijos, pero el margen de seguridad es menor a 5%: un alza pequeña de costos lo vuelve déficit."],
+ def:["bad","NO CUBRE COSTOS FIJOS","El margen de contribución no alcanza para pagar la nómina, depreciaciones e indirectos."],
+ exc:["bad","EXCEDE RECURSOS","El plan requiere más jornadas de guía o despachos de transporte de los disponibles."],
+ inv:["bad","ENTRADA INVÁLIDA","Captura solo números enteros mayores o iguales a cero."]
+};
+function setDict(el,r){const d=invalid?DICT.inv:DICT[r.status];el.className="dictamen "+d[0];el.textContent="";
+ const b=document.createElement("span");b.textContent=d[1];const s=document.createElement("small");s.textContent=d[2];el.append(b,s);}
+
+/* ======================= GRÁFICAS (SVG) ======================= */
+const tip=$("tip");
+function showTip(e,txt,host){const hb=host.getBoundingClientRect();tip.textContent=txt;tip.style.opacity=1;
+ let x=e.clientX+12,y=e.clientY-34;const w=tip.offsetWidth;if(x+w>window.innerWidth-8)x=e.clientX-w-12;
+ tip.style.left=(x+window.scrollX)+"px";tip.style.top=(y+window.scrollY)+"px";}
+function hideTip(){tip.style.opacity=0;}
+document.addEventListener("scroll",hideTip,{passive:true});
+function svgEl(t,a={},txt){const e=document.createElementNS("http://www.w3.org/2000/svg",t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;return e;}
+function bindTip(el,txt,host){el.addEventListener("pointermove",e=>showTip(e,txt,host));el.addEventListener("pointerleave",hideTip);el.addEventListener("pointerdown",e=>showTip(e,txt,host));}
+const css=v=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+function hbars(host,rows,{ref=null,refLbl="",fmt=fm,max=null}={}){
+ host.textContent="";const W=Math.max(280,host.clientWidth),lh=34,padL=Math.min(120,W*.32),padR=90,H=rows.length*lh+(ref!=null?22:6);
+ const s=svgEl("svg",{viewBox:`0 0 ${W} ${H}`});const mx=max??Math.max(ref||0,...rows.map(r=>r.v),1)*1.05;
+ const sx=v=>padL+(W-padL-padR)*Math.max(0,v)/mx;
+ rows.forEach((r,i)=>{const y=i*lh+6;
+  s.append(svgEl("text",{x:padL-8,y:y+16,"text-anchor":"end","font-size":12.5,fill:css("--ink")},r.k));
+  const rc=svgEl("rect",{x:padL,y:y+3,width:Math.max(2,sx(r.v)-padL),height:20,rx:5,fill:r.c||css("--forest2")});
+  bindTip(rc,`${r.k}: ${fmt(r.v)}${r.extra?" · "+r.extra:""}`,host);s.append(rc);
+  s.append(svgEl("text",{x:sx(r.v)+6,y:y+17,"font-size":12,fill:css("--muted")},fmt(r.v)));});
+ if(ref!=null){const x=sx(ref);s.append(svgEl("line",{x1:x,x2:x,y1:0,y2:H-16,stroke:css("--ink"),"stroke-dasharray":"4 4","stroke-width":1.4}));
+  s.append(svgEl("text",{x:Math.min(x,W-4),y:H-3,"text-anchor":x>W-60?"end":"middle","font-size":11.5,fill:css("--muted")},refLbl));}
+ host.append(s);}
+
+function lines(host,series,labels,{fmt=f0,h=220}={}){
+ host.textContent="";const W=Math.max(280,host.clientWidth),H=h,pl=48,pr=14,pt=12,pb=26;
+ const s=svgEl("svg",{viewBox:`0 0 ${W} ${H}`});const mx=Math.max(1,...series.flatMap(sr=>sr.v))*1.1;
+ const sx=i=>pl+(W-pl-pr)*i/(labels.length-1),sy=v=>pt+(H-pt-pb)*(1-v/mx);
+ for(let k=0;k<=4;k++){const v=mx*k/4,y=sy(v);s.append(svgEl("line",{x1:pl,x2:W-pr,y1:y,y2:y,stroke:css("--line")}));
+  s.append(svgEl("text",{x:pl-6,y:y+4,"text-anchor":"end","font-size":11,fill:css("--muted")},v>=1000?f0(v/1000)+"k":f0(v)));}
+ labels.forEach((l,i)=>s.append(svgEl("text",{x:sx(i),y:H-6,"text-anchor":"middle","font-size":11.5,fill:css("--muted")},l)));
+ series.forEach(sr=>{const d=sr.v.map((v,i)=>(i?"L":"M")+sx(i)+" "+sy(v)).join(" ");
+  s.append(svgEl("path",{d,fill:"none",stroke:sr.c,"stroke-width":2.5,"stroke-linejoin":"round"}));
+  sr.v.forEach((v,i)=>{const c=svgEl("circle",{cx:sx(i),cy:sy(v),r:4.5,fill:sr.c,stroke:css("--card"),"stroke-width":1.5});bindTip(c,`${sr.n} · ${labels[i]}: ${fmt(v)}`,host);s.append(c);});
+  const last=sr.v.length-1;s.append(svgEl("text",{x:sx(last)-6,y:sy(sr.v[last])-9,"text-anchor":"end","font-size":11.5,"font-weight":600,fill:sr.c},fmt(sr.v[last])));});
+ host.append(s);}
+
+function vbars(host,rows,{ref=null,refLbl="",fmt=fm,h=230}={}){
+ host.textContent="";const W=Math.max(280,host.clientWidth),H=h,pl=10,pr=10,pt=18,pb=34;
+ const s=svgEl("svg",{viewBox:`0 0 ${W} ${H}`});
+ const vals=rows.map(r=>r.v).concat(ref!=null?[ref]:[]),mx=Math.max(...vals,1)*1.08,mn=Math.min(0,...vals)*1.15;
+ const sy=v=>pt+(H-pt-pb)*(mx-v)/(mx-mn);const bw=(W-pl-pr)/rows.length;
+ s.append(svgEl("line",{x1:pl,x2:W-pr,y1:sy(0),y2:sy(0),stroke:css("--line")}));
+ rows.forEach((r,i)=>{const x=pl+i*bw+bw*.15,w=bw*.7,y0=sy(0),y1=sy(r.v);
+  const rc=svgEl("rect",{x,y:Math.min(y0,y1),width:w,height:Math.max(1.5,Math.abs(y1-y0)),rx:4,fill:r.c});bindTip(rc,`${r.k}: ${fmt(r.v)}${r.extra?" · "+r.extra:""}`,host);s.append(rc);
+  s.append(svgEl("text",{x:x+w/2,y:H-18,"text-anchor":"middle","font-size":11.5,fill:css("--ink")},r.k));
+  if(r.sub)s.append(svgEl("text",{x:x+w/2,y:H-5,"text-anchor":"middle","font-size":10,fill:css("--muted")},r.sub));});
+ if(ref!=null){const y=sy(ref);s.append(svgEl("line",{x1:pl,x2:W-pr,y1:y,y2:y,stroke:css("--ink"),"stroke-dasharray":"5 4"}));
+  s.append(svgEl("text",{x:W-pr,y:y-5,"text-anchor":"end","font-size":11,fill:css("--muted")},refLbl));}
+ host.append(s);}
+
+/* ======================= RENDER ======================= */
+function kpi(lbl,val,note,cls=""){const d=document.createElement("div");d.className="card kpi "+cls;
+ const a=document.createElement("div");a.className="lbl";a.textContent=lbl;const b=document.createElement("div");b.className="val";b.textContent=val;
+ const c=document.createElement("div");c.className="note";c.textContent=note;d.append(a,b,c);return d;}
+function cell(tr,txt,cls,tag="td"){const t=document.createElement(tag);t.textContent=txt;if(cls)t.className=cls;tr.append(t);return t;}
+function table(el,head,rows,numCols=[]){el.textContent="";const th=document.createElement("thead"),tr=document.createElement("tr");
+ head.forEach((h,i)=>cell(tr,h,numCols.includes(i)?"n":"","th"));th.append(tr);el.append(th);const tb=document.createElement("tbody");
+ rows.forEach(r=>{const t=document.createElement("tr");r.forEach((v,i)=>{if(v instanceof Node){const td=document.createElement("td");td.append(v);if(numCols.includes(i))td.className="n";t.append(td);}else cell(t,v,numCols.includes(i)?"n":"");});tb.append(t);});el.append(tb);}
+function pill(txt,cls){const s=document.createElement("span");s.className="pill "+cls;s.textContent=txt;return s;}
+
+function socTot(i){return SOC.fb[i]+SOC.ig[i]+SOC.tt[i];}
+
+function renderResumen(r){
+ setDict($("dictamenTop"),r);const g=$("kpiGrid");g.textContent="";
+ const L=MONTHS.length-1,vNow=socTot(L),vPrev=socTot(L-1);
+ g.append(
+  kpi("Ingresos del mes",fm(r.ing),`${r.ord} órdenes · ${f0(r.pax)} visitantes`,"accent"),
+  kpi("Margen de contribución",fm(r.mar),`${fp(r.ing?r.mar/r.ing:0)} de los ingresos`,"accent"),
+  kpi("Costos fijos (CF)",fm(CF),"Nómina, depreciación e indirectos","lava"),
+  kpi(r.sup>=0?"Superávit":"Déficit",fm(r.sup),`Cobertura de CF: ${fp(r.cob)}`,r.sup>=0?"accent":"lava"),
+  kpi("Margen de seguridad",fp(r.seg),r.seg<0.05?"Alerta: menor a 5%":"Colchón suficiente",r.seg<0.05?"sulfur":"accent"),
+  kpi("Ticket por visitante",fm(r.pax?r.ing/r.pax:0),"Ingreso promedio por persona","lagoon"),
+  kpi("Jornadas de guía",`${r.g} / ${LIM.g}`,`${fp(r.g/LIM.g,0)} de la capacidad`,r.g>LIM.g?"lava":"lagoon"),
+  kpi("Despachos de transporte",`${r.t} / ${LIM.t}`,`${fp(r.t/LIM.t,0)} de la capacidad`,r.t>LIM.t?"lava":"lagoon"),
+  kpi("Vistas en redes (mes)",f0(vNow),`${vNow>=vPrev?"▲":"▼"} ${fp(Math.abs(vNow/vPrev-1))} vs. mes anterior · ejemplo`,"sulfur"),
+  kpi("Conversión consulta → orden",fp(SOC.ord[L]/SOC.msgs[L]),`${SOC.ord[L]} órdenes de ${SOC.msgs[L]} consultas · ejemplo`,"sulfur")
+ );
+ hbars($("chMix"),KEYS.map(k=>({k:PK[k].short,v:r.by[k].mar,c:PK[k].c,extra:`${r.by[k].n} órdenes`})),{ref:CF,refLbl:"CF "+fm(CF)});
+ const m=$("resMeters");m.textContent="";
+ [["Jornadas de guía",r.g,LIM.g],["Despachos de transporte",r.t,LIM.t]].forEach(([l,v,lim])=>{
+  const w=document.createElement("div");w.style.marginBottom="10px";const top=document.createElement("div");top.className="row";top.style.justifyContent="space-between";
+  const a=document.createElement("span");a.textContent=l;const b=document.createElement("b");b.textContent=`${v} de ${lim}`;top.append(a,b);
+  const mt=document.createElement("div");mt.className="meter";const i=document.createElement("i");i.style.width=Math.min(100,v/lim*100)+"%";i.style.background=v>lim?css("--bad"):(v/lim>.9?css("--sulfur"):css("--forest2"));mt.append(i);w.append(top,mt);m.append(w);});
+ const b=best();const rb=evalPlan(b.x);
+ $("recTxt").textContent=`Con los precios y costos actuales, la mezcla entera que más margen deja dentro de los límites es A = ${b.x[0]}, B = ${b.x[1]}, C = ${b.x[2]}: margen ${fm(rb.mar)}, superávit ${fm(rb.sup)} (margen de seguridad ${fp(rb.seg)}), ${rb.g} jornadas y ${rb.t} despachos. Es el máximo teórico de capacidad; la demanda real decide si se puede vender.`;
+ $("useRec").onclick=()=>{X=b.x.slice();invalid=false;syncInputs();renderAll();};
+ lines($("chSocialMini"),[{n:"Total",v:MONTHS.map((_,i)=>socTot(i)),c:css("--lava")}],MONTHS,{h:180});
+ const pm=$("pipeMini");pm.textContent="";const tot=STAGES.map((_,s)=>LEADS.filter(l=>l.s===s).reduce((a,l)=>a+l.o,0));const mxo=Math.max(1,...tot);
+ STAGES.forEach((st,s)=>{const w=document.createElement("div");w.style.marginBottom="8px";const top=document.createElement("div");top.className="row";top.style.justifyContent="space-between";
+  const a=document.createElement("span");a.textContent=st;const bb=document.createElement("b");bb.textContent=`${tot[s]} órdenes`;top.append(a,bb);
+  const mt=document.createElement("div");mt.className="meter";const i=document.createElement("i");i.style.width=(tot[s]/mxo*100)+"%";i.style.background=[css("--muted"),css("--lagoon"),css("--sulfur"),css("--forest2")][s];mt.append(i);w.append(top,mt);pm.append(w);});
+}
+
+function buildInputs(){const box=$("orderInputs");box.textContent="";
+ KEYS.forEach((k,i)=>{const l=document.createElement("label");l.className="fld";l.textContent=PK[k].n;
+  const inp=document.createElement("input");inp.type="number";inp.min=0;inp.step=1;inp.inputMode="numeric";inp.id="in"+k;inp.value=X[i];
+  inp.addEventListener("input",readInputs);l.append(inp);box.append(l);});
+ const sel=$("caseSel");sel.textContent="";const o0=document.createElement("option");o0.textContent="— elegir —";o0.value="";sel.append(o0);
+ CASES.forEach((c,i)=>{const o=document.createElement("option");o.value=i;o.textContent=c[0];sel.append(o);});
+ sel.onchange=()=>{if(sel.value==="")return;X=CASES[+sel.value][1].slice();invalid=false;syncInputs();renderAll();};}
+function syncInputs(){KEYS.forEach((k,i)=>{const el=$("in"+k);el.value=X[i];el.classList.remove("err");});}
+function readInputs(){invalid=false;const nx=[];
+ KEYS.forEach(k=>{const el=$("in"+k),raw=el.value.trim();const ok=/^\d+$/.test(raw);el.classList.toggle("err",!ok);if(!ok)invalid=true;nx.push(ok?parseInt(raw,10):0);});
+ if(!invalid)X=nx;renderAll();}
+
+function renderPlaneador(r){
+ setDict($("dictamenPlan"),r);
+ const st=(ok)=>pill(ok?"OK":"Revisar",ok?"ok":"bad");
+ table($("tblPlan"),["Indicador","Resultado","Límite","Estado"],[
+  ["Órdenes totales",f0(r.ord),"",""],["Personas atendidas",f0(r.pax),"",""],
+  ["Ingresos",fm(r.ing),"",""],["Costo variable total",fm(r.cvT),"",""],
+  ["Margen de contribución",fm(r.mar),"",""],["Costos fijos",fm(CF),"",""],
+  ["Superávit / (déficit)",fm(r.sup),"≥ 0",st(r.sup>=0)],["Cobertura de CF",fp(r.cob),"≥ 100%",st(r.cob>=1)],
+  ["Margen de seguridad",fp(r.seg),"≥ 5%",pill(r.seg>=0.05?"OK":(r.seg>=0?"AJUSTADO":"Déficit"),r.seg>=0.05?"ok":(r.seg>=0?"warn":"bad"))],
+  ["Jornadas de guía",f0(r.g),String(LIM.g),st(r.g<=LIM.g)],["Despachos de transporte",f0(r.t),String(LIM.t),st(r.t<=LIM.t)]
+ ],[1,2]);
+ // matriz
+ const mv=$("matrixView");mv.textContent="";
+ const mat=(rows,cols)=>{const d=document.createElement("div");d.className="mat";d.style.gridTemplateColumns=`repeat(${cols},auto)`;rows.flat().forEach(v=>{const s=document.createElement("span");s.textContent=v;d.append(s);});return d;};
+ const sym=t=>{const s=document.createElement("span");s.textContent=t;s.style.fontSize="18px";return s;};
+ const mo=KEYS.map(k=>unit(k).mo);
+ mv.append(sym("A ="),mat([mo.map(v=>f0(v)),KEYS.map(k=>PK[k].g),KEYS.map(k=>PK[k].t)],3),sym("x ="),mat(X.map(v=>[v]),1),
+  sym("A·x ="),mat([[fm(r.mar)],[r.g],[r.t]],1));
+ $("matrixNote").textContent=`Margen = ${f0(mo[0])}·${X[0]} + ${f0(mo[1])}·${X[1]} + ${f0(mo[2])}·${X[2]} = ${fm(r.mar)}. Guías = 2·${X[0]} + 2·${X[1]} + 3·${X[2]} = ${r.g}. Transporte = 2·${X[0]} + 1·${X[1]} + 1·${X[2]} = ${r.t}. El sistema de igualdades de la Semana 6 no tenía solución factible (daba un valor negativo), por eso el modelo trabaja con desigualdades: A·x ≥ CF en margen y ≤ límites en recursos.`;
+ table($("tblBE"),["Paquete","Margen por orden","Equilibrio exacto","Órdenes enteras","Guías que usaría","¿Cabe en 26 guías?"],
+  KEYS.map(k=>{const mo=unit(k).mo,be=CF/mo,n=Math.ceil(be);return[PK[k].n,fm(mo),be.toFixed(2),String(n),String(n*PK[k].g),pill(n*PK[k].g<=LIM.g&&n*PK[k].t<=LIM.t?"Sí":"No",n*PK[k].g<=LIM.g&&n*PK[k].t<=LIM.t?"ok":"bad")];}),[1,2,3,4]);
+}
+
+function renderRutas(r){
+ const tree=$("tree");tree.textContent="";
+ const node=(cls,t,d,chips=[],color)=>{const n=document.createElement("div");n.className="node "+cls;if(color)n.style.setProperty("--c",color);
+  const a=document.createElement("div");a.className="t";a.textContent=t;n.append(a);if(d){const b=document.createElement("div");b.className="d";b.textContent=d;n.append(b);}
+  if(chips.length){const c=document.createElement("div");c.className="chips";chips.forEach(x=>{const s=document.createElement("span");s.className="chip";s.textContent=x;c.append(s);});n.append(c);}return n;};
+ const li=(n,children)=>{const l=document.createElement("li");if(children&&children.length){const det=document.createElement("details");det.open=true;const sm=document.createElement("summary");sm.append(n);det.append(sm);const ul=document.createElement("ul");children.forEach(c=>ul.append(c));det.append(ul);l.append(det);}else l.append(n);return l;};
+ const kids=KEYS.map(k=>{const P=PK[k],b=r.by[k];
+  const sub=[
+   li(node("","Unidades de transporte",`${P.t} por orden × ${b.n} órdenes`,[`${b.t} despachos`,`${fp(r.t?b.t/r.t:0,0)} del transporte`])),
+   li(node("","Jornadas de guía certificado",`${P.g} por orden × ${b.n} órdenes`,[`${b.g} jornadas`,`${fp(r.g?b.g/r.g:0,0)} de las guías`])),
+   li(node("","Visitantes",`${P.pax} personas por orden`,[`${f0(b.pax)} personas`])),
+   li(node("","Resultado de la ruta","",[`Ingreso ${fm(b.ing)}`,`Costo var. ${fm(b.cv)}`,`Margen ${fm(b.mar)}`]))
+  ];
+  return li(node("pk",`${P.ruta} · Paquete ${k}`,P.n.slice(4),[`${b.n} órdenes`,`${fm(P.price*(1+pAdj/100))} por persona`],P.c),sub);});
+ const team=li(node("","Logística del equipo ApS","Tuxtla Gutiérrez → Chapultenango, ida y vuelta",["2 jornadas de campo","$2,400 estimado en gasolina y casetas"]),[
+  li(node("","Jornada 1 · Semana 12","Presentar la herramienta y levantar línea base")),li(node("","Jornada 2 · Semana 13","Medición posterior y valoración del socio"))]);
+ tree.append(li(node("root","Base operativa · Chapultenango",`Volcán El Chichonal · ${r.t} despachos y ${r.g} jornadas este mes`,[`Límite ${LIM.t} despachos`,`Límite ${LIM.g} guías`]),[...kids,team]));
+ // gráfico
+ const host=$("chRoutes");host.textContent="";const W=Math.max(280,host.clientWidth),H=150,pl=96,pr=12;const s=svgEl("svg",{viewBox:`0 0 ${W} ${H}`});
+ [["Transporte","t",LIM.t],["Guías","g",LIM.g]].forEach(([lbl,key,lim],row)=>{const y=row*62+14;let x=pl;const sc=(W-pl-pr)/Math.max(lim,r[key]);
+  s.append(svgEl("text",{x:pl-8,y:y+20,"text-anchor":"end","font-size":12.5,fill:css("--ink")},lbl));
+  s.append(svgEl("rect",{x:pl,y,width:lim*sc,height:30,rx:6,fill:"none",stroke:css("--line"),"stroke-dasharray":"4 3"}));
+  KEYS.forEach(k=>{const v=r.by[k][key];if(!v)return;const w=v*sc;const rc=svgEl("rect",{x,y,width:w,height:30,fill:PK[k].c});bindTip(rc,`${PK[k].ruta}: ${v} ${key==="t"?"despachos":"jornadas"}`,host);s.append(rc);
+   if(w>22)s.append(svgEl("text",{x:x+w/2,y:y+20,"text-anchor":"middle","font-size":12,"font-weight":600,fill:"#fff"},v));x+=w;});
+  s.append(svgEl("text",{x:pl,y:y+46,"font-size":11,fill:css("--muted")},`${r[key]} usados de ${lim}`));});
+ host.append(s);
+ const lg=document.createElement("div");lg.className="legend";KEYS.forEach(k=>{const sp=document.createElement("span");const i=document.createElement("i");i.style.background=PK[k].c;sp.append(i,document.createTextNode(PK[k].ruta));lg.append(sp);});host.append(lg);
+ table($("tblRoutes"),["Ruta","Margen por orden","Despachos por orden","Margen por despacho","Margen por jornada de guía"],
+  KEYS.map(k=>{const mo=unit(k).mo;return[PK[k].ruta+" ("+k+")",fm(mo),String(PK[k].t),fm(mo/PK[k].t),fm(mo/PK[k].g)];}),[1,2,3,4]);
+}
+
+function renderCostos(r){
+ hbars($("chCF"),CF_ITEMS.map((c,i)=>({k:c.k,v:c.v,c:[css("--forest2"),css("--sulfur"),css("--lava")][i],extra:fp(c.v/CF)})));
+ table($("tblCF"),["Concepto","Monto mensual","% de CF"],[...CF_ITEMS.map(c=>[c.k,fm(c.v),fp(c.v/CF)]),["Total CF",fm(CF),"100%"]],[1,2]);
+ table($("tblUnit"),["Paquete","Personas","Precio","Costo var.","Margen / persona","Margen / orden","Margen %"],
+  KEYS.map(k=>{const u=unit(k);return[PK[k].n,String(PK[k].pax),fm(u.pr),fm(u.cv),fm(u.mu),fm(u.mo),fp(u.mu/u.pr)];}),[1,2,3,4,5,6]);
+ $("pLbl").textContent=(pAdj>0?"+":"")+pAdj+"%";$("cLbl").textContent=(cAdj>0?"+":"")+cAdj+"%";
+ const sc=[["Base",0,0],["Precio −5%",-5,0],["Precio +5%",5,0],["Costo −5%",0,-5],["Costo +5%",0,5],["P−5 C+5",-5,5],["P+5 C−5",5,-5]];
+ const res=sc.map(([n,p,c])=>{const e=evalPlan(X,p+pAdj,c+cAdj);return{n,p,c,e};});
+ vbars($("chScen"),res.map(o=>({k:o.n.replace("Precio","P").replace("Costo","C"),v:o.e.sup,c:o.e.sup>=0?(o.e.seg<0.05?css("--sulfur"):css("--forest2")):css("--bad"),extra:"superávit"})),{ref:0});
+ table($("tblScen"),["Escenario","Margen","Superávit","Margen de seguridad","Dictamen"],
+  res.map(o=>[o.n,fm(o.e.mar),fm(o.e.sup),fp(o.e.seg),pill(DICT[o.e.status][1],DICT[o.e.status][0])]),[1,2,3]);
+}
+
+function renderRedes(){
+ const L=MONTHS.length-1,tot=MONTHS.map((_,i)=>socTot(i));const g=$("socKpis");g.textContent="";
+ const growth=tot[L]/tot[0]-1;const engag=SOC.inter[L]/tot[L];
+ g.append(kpi("Vistas del mes",f0(tot[L]),`${tot[L]>=tot[L-1]?"▲":"▼"} ${fp(Math.abs(tot[L]/tot[L-1]-1))} vs. ${MONTHS[L-1]}`,"sulfur"),
+  kpi("Crecimiento en 6 meses",fp(growth,0),`${MONTHS[0]} → ${MONTHS[L]}`,"sulfur"),
+  kpi("Tasa de interacción",fp(engag,2),"Interacciones ÷ vistas","lagoon"),
+  kpi("Consultas por mensaje",f0(SOC.msgs[L]),`Mes de ${MONTHS[L]}`,"lagoon"),
+  kpi("Órdenes desde redes",f0(SOC.ord[L]),`Conversión ${fp(SOC.ord[L]/SOC.msgs[L])}`,"accent"),
+  kpi("Red con más alcance",NET.reduce((a,n)=>SOC[n.k][L]>SOC[a.k][L]?n:a).n,"Último mes","accent"));
+ lines($("chViews"),NET.map(n=>({n:n.n,v:SOC[n.k],c:n.k==="tt"?css("--ink"):n.c})),MONTHS);
+ const lg=$("lgViews");lg.textContent="";NET.forEach(n=>{const sp=document.createElement("span");const i=document.createElement("i");i.style.background=n.k==="tt"?css("--ink"):n.c;sp.append(i,document.createTextNode(n.n));lg.append(sp);});
+ const fn=$("socFunnel");fn.textContent="";const steps=[["Vistas",tot[L]],["Interacciones",SOC.inter[L]],["Consultas",SOC.msgs[L]],["Órdenes",SOC.ord[L]]];
+ steps.forEach(([l,v],i)=>{const w=document.createElement("div");w.style.marginBottom="10px";const top=document.createElement("div");top.className="row";top.style.justifyContent="space-between";
+  const a=document.createElement("span");a.textContent=l;const b=document.createElement("b");b.textContent=f0(v)+(i?`  (${fp(v/steps[i-1][1],1)} del paso anterior)`:"");top.append(a,b);
+  const mt=document.createElement("div");mt.className="meter";const ii=document.createElement("i");ii.style.width=Math.max(2,Math.sqrt(v/steps[0][1])*100)+"%";ii.style.background=[css("--sulfur"),css("--lagoon"),css("--forest2"),css("--lava")][i];mt.append(ii);w.append(top,mt);fn.append(w);});
+ const small=document.createElement("p");small.className="sub";small.textContent="Barra en escala de raíz cuadrada para que los pasos pequeños sean visibles.";fn.append(small);
+ const t=$("tblSoc");t.textContent="";const th=document.createElement("thead"),hr=document.createElement("tr");["Mes","Facebook","Instagram","TikTok","Interacc.","Consultas","Órdenes"].forEach((h,i)=>cell(hr,h,i?"n":"","th"));th.append(hr);t.append(th);
+ const tb=document.createElement("tbody");MONTHS.forEach((m,i)=>{const tr=document.createElement("tr");cell(tr,m);
+  ["fb","ig","tt","inter","msgs","ord"].forEach(k=>{const td=document.createElement("td");td.className="n";const inp=document.createElement("input");inp.type="number";inp.min=0;inp.step=1;inp.value=SOC[k][i];inp.style.minWidth="74px";inp.style.padding="5px 6px";
+   inp.addEventListener("change",()=>{const v=parseInt(inp.value,10);if(isNaN(v)||v<0){inp.classList.add("err");return;}inp.classList.remove("err");SOC[k][i]=v;renderRedes();renderResumen(evalPlan(X));});td.append(inp);tr.append(td);});tb.append(tr);});t.append(tb);
+}
+
+function renderClientes(){
+ const g=$("cliKpis");g.textContent="";const conf=LEADS.filter(l=>l.s===3),open=LEADS.filter(l=>l.s<3);
+ const val=ls=>ls.reduce((a,l)=>a+l.o*unit(l.pk).mo,0);
+ const confX=KEYS.map(k=>conf.filter(l=>l.pk===k).reduce((a,l)=>a+l.o,0));
+ g.append(kpi("Prospectos activos",String(open.length),`${LEADS.length} instituciones en total`,"lagoon"),
+  kpi("Órdenes confirmadas",String(confX.reduce((a,b)=>a+b,0)),`A ${confX[0]} · B ${confX[1]} · C ${confX[2]}`,"accent"),
+  kpi("Margen confirmado",fm(val(conf)),`${fp(val(conf)/CF)} de los costos fijos`,"accent"),
+  kpi("Margen en negociación",fm(val(LEADS.filter(l=>l.s===2))),"Prospectos en cotización","sulfur"),
+  kpi("Tasa de cierre",fp(LEADS.length?conf.length/LEADS.length:0,0),"Confirmados ÷ total","sulfur"));
+ const box=$("stages");box.textContent="";
+ STAGES.forEach((st,s)=>{const col=document.createElement("div");col.className="col";const h=document.createElement("h4");const a=document.createElement("span");a.textContent=st;
+  const ls=LEADS.filter(l=>l.s===s);const b=document.createElement("span");b.textContent=ls.length;b.style.color=css("--muted");h.append(a,b);col.append(h);
+  ls.forEach(l=>{const c=document.createElement("div");c.className="lead";c.style.borderLeft="4px solid "+PK[l.pk].c;const nm=document.createElement("b");nm.textContent=l.n;
+   const info=document.createElement("div");info.className="sub";info.style.margin="2px 0 0";info.textContent=`Paquete ${l.pk} · ${l.o} orden${l.o>1?"es":""} · ${fm(l.o*unit(l.pk).mo)} de margen`;
+   const row=document.createElement("div");row.className="row";const sel=document.createElement("select");STAGES.forEach((x,i)=>{const o=document.createElement("option");o.value=i;o.textContent=x;if(i===s)o.selected=true;sel.append(o);});
+   sel.onchange=()=>{l.s=+sel.value;renderClientes();renderResumen(evalPlan(X));};
+   const del=document.createElement("button");del.className="btn ghost";del.style.padding="3px 8px";del.style.fontSize="12px";del.textContent="Quitar";del.onclick=()=>{LEADS=LEADS.filter(z=>z!==l);renderClientes();renderResumen(evalPlan(X));};
+   row.append(sel,del);c.append(nm,info,row);col.append(c);});box.append(col);});
+}
+$("addLead").addEventListener("submit",e=>{e.preventDefault();const n=$("lName").value.trim(),o=parseInt($("lOrd").value,10);if(!n||!(o>=1))return;
+ LEADS.push({n,pk:$("lPk").value,o,s:0});$("lName").value="";renderClientes();renderResumen(evalPlan(X));});
+
+function renderProyecto(){
+ const g=$("prjKpis");g.textContent="";
+ g.append(kpi("Avance de la herramienta","75%","V1 · Semana 10 (V0.3 era 35%)","accent"),
+  kpi("Pruebas que cumplen","7 / 10","Meta de aceptación: 90%","sulfur"),
+  kpi("Exactitud de cálculo","$0.00","Diferencia vs. cálculo manual en P1–P7","accent"),
+  kpi("Presupuesto estimado",fm(3810),"≈ $952.50 por integrante","lagoon"),
+  kpi("Gastado a la fecha",fm(0),"Traslados en Semanas 12 y 13","lagoon"),
+  kpi("Próximo hito","V2","Semana 11: validación y manual","lava"));
+ vbars($("chTests"),TESTS.map(t=>({k:t.id,v:t.m,c:t.ok?css("--forest2"):css("--bad"),extra:t.d})),{ref:CF,refLbl:"CF "+fm(CF),h:240});
+ table($("tblBudget"),["Concepto","Presupuesto","Gastado"],[...BUDGET.map(b=>[b[0],fm(b[1]),fm(b[2])]),["Total",fm(3810),fm(0)]],[1,2]);
+ table($("tblFails"),["ID","Falla","Gravedad","Prioridad","Corrección V2"],FAILS.map(f=>[f[0],f[1],pill(f[2],f[2]==="Alta"?"bad":f[2]==="Media"?"warn":"ok"),String(f[3]),f[4]]),[3]);
+ const lvl=v=>pill(v,v==="Alta"?"bad":v==="Media"?"warn":"ok");
+ table($("tblRisk"),["Riesgo","Probabilidad","Consecuencia"],RISKS.map(x=>[x[0],lvl(x[1]),lvl(x[2])]));
+}
+
+function renderAll(){const r=evalPlan(X);renderResumen(r);renderPlaneador(r);renderRutas(r);renderCostos(r);renderRedes();renderClientes();renderProyecto();}
+
+/* ======================= NAVEGACIÓN ======================= */
+const VIEWS=["resumen","planeador","rutas","costos","redes","clientes","proyecto"];
+function show(v){if(!VIEWS.includes(v))v="resumen";document.querySelectorAll("section.view").forEach(s=>s.classList.toggle("on",s.id===v));
+ document.querySelectorAll("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.v===v));renderAll();}
+document.querySelectorAll("#tabs button").forEach(b=>b.addEventListener("click",()=>{try{history.replaceState(null,"","#"+b.dataset.v);}catch(e){}show(b.dataset.v);}));
+window.addEventListener("hashchange",()=>show(location.hash.slice(1)));
+$("pAdj").addEventListener("input",e=>{pAdj=+e.target.value;renderAll();});
+$("cAdj").addEventListener("input",e=>{cAdj=+e.target.value;renderAll();});
+$("resetAdj").onclick=()=>{pAdj=0;cAdj=0;$("pAdj").value=0;$("cAdj").value=0;renderAll();};
+let rt;window.addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(renderAll,150);});
+buildInputs();show(location.hash.slice(1));
+</script>
+</body>
+</html>
