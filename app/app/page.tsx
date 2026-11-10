@@ -9,6 +9,7 @@ import {
   AlertTriangle, Waves, Recycle, TriangleAlert,
 } from 'lucide-react';
 import { useInstallPrompt } from '@/components/pwa/use-install-prompt';
+import RobotModels from '@/components/pwa/robot-models';
 
 function clamp(v: number, min: number, max: number) { return Math.min(max, Math.max(min, v)); }
 
@@ -107,6 +108,9 @@ export default function ControlApp() {
             </button>
           )}
         </div>
+
+        {/* Modelos 3D */}
+        <RobotModels />
 
         {/* Camera live view */}
         <div className="relative rounded-2xl overflow-hidden border border-[#1a1a2e] aspect-video bg-[#0d0d1a]">

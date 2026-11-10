@@ -1,5 +1,5 @@
 // Minimal service worker to enable PWA installability for CHENEK BALAM Control
-const CACHE = 'chenek-balam-v1';
+const CACHE = 'chenek-balam-v2';
 const CORE = ['/app', '/icons/icon-192.png', '/icons/icon-512.png', '/manifest.webmanifest'];
 
 self.addEventListener('install', (event) => {
