@@ -5,7 +5,7 @@
 <style>
 html,body{margin:0;height:100%;background:#0b1512;overflow:hidden;font-family:'Source Sans 3',Arial,sans-serif}
 #stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0}
-section{position:absolute;inset:0;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .7s ease, transform .7s ease;transform:translateX(40px)}
+section{position:absolute;inset:0;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;opacity:0;visibility:hidden;transition:none}
 section.on{opacity:1;visibility:visible;transform:none}
 section.prev{transform:translateX(-40px)}
 section *{margin:0;box-sizing:border-box}
@@ -17,7 +17,7 @@ section aside{display:none}
 #notes{position:fixed;left:0;right:0;bottom:48px;margin:auto;max-width:900px;background:#13241fee;color:#f4efe6;font:18px/1.45 Arial,sans-serif;padding:16px 20px;border-radius:12px;display:none}
 </style></head><body>
 <div id="stage">
-<section data-i="0" id="cover" data-transition="magic" style="display:flex; flex-direction:column; gap:28px; justify-content:center; padding:160px 128px 128px; background:#13241f">
+<section data-i="0" id="cover" style="display:flex; flex-direction:column; gap:28px; justify-content:center; padding:160px 128px 128px; background:#13241f">
   <img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute; top:180px; left:0; width:820px; height:898px; object-fit:contain">
   <img src="img/proto-water.jpg" alt="El robot CHENEK BALAM navegando en una laguna" style="position:absolute; top:0; left:1040px; width:880px; height:1080px">
   <img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute; top:48px; left:128px; width:48px; height:53px; object-fit:contain">
@@ -36,7 +36,7 @@ section aside{display:none}
 <aside>[0:00 – 0:35] EYLAN: Buenos días, integrantes del jurado. ¿Sabían que cada año se acumulan más de 45 mil toneladas de basura en el Cañón del Sumidero, uno de los lugares más bellos de México? Mi nombre es Eylan Cruz y, junto con Brayam, Alfredo y Sergio, somos el equipo de CHENEK BALAM, un proyecto chiapaneco nacido en el Tecnológico de Tuxtla Gutiérrez. Diseñamos robots acuáticos inspirados en el jaguar, el balam, que recogen la basura que flota en ríos y lagunas y miden la calidad del agua.</aside>
 </section>
 
-<section data-i="1" id="problema" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<section data-i="1" id="problema" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:44px">
 <img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
@@ -58,13 +58,13 @@ section aside{display:none}
 </div>
 </div>
 <p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#5f6b66">Fuentes: López Pimentel (2015), tesis de maestría, UNAM; CONAGUA; PNUMA.</p>
-<img src="img/cocodrilo1.jpg" alt="Cocodrilo entre botellas de plástico en el Cañón del Sumidero" data-build-in="fade" style="position:absolute;left:128px;top:798px;width:840px;height:168px;object-fit:cover;object-position:center 60%;border-radius:20px">
+<img src="img/cocodrilo1.jpg" alt="Cocodrilo entre botellas de plástico en el Cañón del Sumidero" style="position:absolute;left:128px;top:798px;width:840px;height:168px;object-fit:cover;object-position:center 60%;border-radius:20px">
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
 <aside>[0:35 – 1:05] EYLAN: Casi el 90 % de esa basura es plástico PET. Más de la mitad de los cuerpos de agua monitoreados en México están contaminados, y los ríos son la principal vía por la que el plástico llega al mar. Esta basura daña la biodiversidad, la pesca y el turismo, motores de la economía de nuestro estado.</aside>
 </section>
 
-<section data-i="2" id="hoy" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<section data-i="2" id="hoy" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
 <img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
@@ -79,16 +79,16 @@ section aside{display:none}
 <tr><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Robots extranjeros</td><td style="padding:18px 24px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">De 15,000 a más de 40,000 dólares, sin refacciones ni soporte en México</td></tr>
 </table>
 <p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#5f6b66">Robots de referencia: WasteShark, ClearBot y Jellyfishbot.</p>
-<img src="img/cuadrilla_lancha.jpg" alt="Cuadrilla recolectando botellas de plástico a mano en una lancha" data-build-in="fade" style="position:absolute;left:1272px;top:330px;width:520px;height:440px;object-fit:cover;border-radius:24px">
+<img src="img/cuadrilla_lancha.jpg" alt="Cuadrilla recolectando botellas de plástico a mano en una lancha" style="position:absolute;left:1272px;top:330px;width:520px;height:440px;object-fit:cover;border-radius:24px">
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
 <aside>[1:05 – 1:40] EYLAN: Hoy se limpia con cuadrillas que se meten al agua y arriesgan su salud, con lanchas de motor que contaminan o con barreras que solo atrapan lo que la corriente les acerca. Hay robots extranjeros, pero cuestan entre 15 mil y más de 40 mil dólares, sin refacciones ni soporte en México. Ahí está la oportunidad: no existe una solución accesible, local y eficiente.</aside>
 </section>
 
-<section data-i="3" id="trayectoria" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<section data-i="3" id="trayectoria" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
 <img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:-60px;top:200px;width:760px;height:832px;object-fit:contain">
-<img src="img/comp-trophy.jpg" alt="El equipo CHENEK BALAM con su reconocimiento en InnovaTecNM 2025" data-build-in="fade" style="position:absolute;left:1240px;top:160px;width:552px;height:500px;object-fit:cover;border-radius:24px">
-<img src="img/comp-booth.jpg" alt="El equipo con autoridades en el stand del proyecto" data-build-in="rise" style="position:absolute;left:1240px;top:684px;width:340px;height:236px;object-fit:cover;border-radius:24px">
+<img src="img/comp-trophy.jpg" alt="El equipo CHENEK BALAM con su reconocimiento en InnovaTecNM 2025" style="position:absolute;left:1240px;top:160px;width:552px;height:500px;object-fit:cover;border-radius:24px">
+<img src="img/comp-booth.jpg" alt="El equipo con autoridades en el stand del proyecto" style="position:absolute;left:1240px;top:684px;width:340px;height:236px;object-fit:cover;border-radius:24px">
 <img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
 <p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#c9c2b4">04 / 17</p>
@@ -106,10 +106,10 @@ section aside{display:none}
 <aside>[1:40 – 2:20] EYLAN: Y esto ya no es solo una idea. En InnovaTecNM ganamos el primer lugar en Sostenibilidad en la etapa local, en Tuxtla, y en la regional, en Comitán, y representamos a Chiapas en la etapa nacional en Pachuca. El Tec de Tuxtla firmó un convenio con la Secretaría de Pesca y Acuacultura, presentamos el proyecto ante la Presidenta de la República y solicitamos el registro de la marca ante el IMPI. Y hoy, Quintana Roo ya comprometió 11 robots. Ahora mi compañero Brayam les explicará cómo funciona.</aside>
 </section>
 
-<section data-i="4" id="solucion" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:36px">
+<section data-i="4" id="solucion" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:36px">
 <img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:-60px;top:200px;width:760px;height:832px;object-fit:contain">
-<img src="img/proto-action.jpg" alt="CHENEK BALAM recolectando botellas de plástico en una laguna" data-build-in="fade" style="position:absolute;left:1060px;top:160px;width:732px;height:500px;object-fit:cover;border-radius:24px">
-<img src="img/proto-stand.jpg" alt="El prototipo en exhibición con su electrónica a la vista" data-build-in="rise" style="position:absolute;left:1060px;top:684px;width:500px;height:236px;object-fit:cover;border-radius:24px">
+<img src="img/proto-action.jpg" alt="CHENEK BALAM recolectando botellas de plástico en una laguna" style="position:absolute;left:1060px;top:160px;width:732px;height:500px;object-fit:cover;border-radius:24px">
+<img src="img/proto-stand.jpg" alt="El prototipo en exhibición con su electrónica a la vista" style="position:absolute;left:1060px;top:684px;width:500px;height:236px;object-fit:cover;border-radius:24px">
 <img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
 <p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#c9c2b4">05 / 17</p>
@@ -126,16 +126,16 @@ section aside{display:none}
 <aside>[2:20 – 2:55] BRAYAM: Gracias, Eylan. CHENEK BALAM es un catamarán eléctrico: la basura entra por el frente, sube por una banda transportadora y queda en una malla. Recolectó 120 kilos en 30 minutos y, al mismo tiempo, mide la calidad del agua y manda los datos a una aplicación.</aside>
 </section>
 
-<section data-i="5" id="ficha" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<section data-i="5" id="ficha" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
 <img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
 <p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#5f6b66">06 / 17</p>
 <div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#1f6f62;letter-spacing:3px">FICHA TÉCNICA</p></div>
 <h2 style="font-family:'Outfit', Arial, sans-serif;font-size:64px;font-weight:700;line-height:1.1;width:1400px">Un mismo catamarán para los dos modelos</h2>
-<img src="img/chb01_lateral.png" alt="Vista lateral del catamarán CHB01-27" data-build-in="fade" style="position:absolute;left:128px;top:380px;width:548px;height:300px;object-fit:contain">
+<img src="img/chb01_lateral.png" alt="Vista lateral del catamarán CHB01-27" style="position:absolute;left:128px;top:380px;width:548px;height:300px;object-fit:contain">
 <p style="position:absolute;left:128px;top:690px;width:548px;font-size:22px;text-align:center;color:#5f6b66">Vista lateral</p>
-<img src="img/chb01_frontal.png" alt="Vista frontal del catamarán CHB01-27" data-build-in="fade" style="position:absolute;left:712px;top:380px;width:400px;height:300px;object-fit:contain">
+<img src="img/chb01_frontal.png" alt="Vista frontal del catamarán CHB01-27" style="position:absolute;left:712px;top:380px;width:400px;height:300px;object-fit:contain">
 <p style="position:absolute;left:712px;top:690px;width:400px;font-size:22px;text-align:center;color:#5f6b66">Vista frontal</p>
 <p style="position:absolute;left:128px;top:736px;width:960px;font-size:30px;line-height:1.35"><b>Los modelos CHB01-27 y CHB02-27 usan el mismo catamarán;</b> solo cambia el sistema electrónico que se instala en él.</p>
 <table style="position:absolute;left:1140px;top:360px;width:652px;font-size:26px;border-collapse:collapse">
@@ -155,7 +155,7 @@ section aside{display:none}
 <aside>[2:55 – 3:10] BRAYAM: Mide 3.31 metros de largo, y nuestros dos modelos usan el mismo catamarán.</aside>
 </section>
 
-<section data-i="6" id="modelos" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:150px 128px 120px;display:flex;flex-direction:column;gap:24px">
+<section data-i="6" id="modelos" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:150px 128px 120px;display:flex;flex-direction:column;gap:24px">
 <img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
@@ -165,7 +165,7 @@ section aside{display:none}
 <table style="width:1180px;font-size:21px;border-collapse:collapse">
 <tr><th style="text-align:left;padding:12px 20px;background:#0c1814;color:#c9c2b4;font-weight:700">Qué incluye</th><th style="padding:12px 20px;background:#0c1814;width:230px"><span style="color:#e0782a">CHB01-27</span><br>Catamarán</th><th style="padding:12px 20px;background:#e0782a;color:#13241f;width:230px">CHB02-27<br>Jaguar Inteligente</th></tr>
 <tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Catamarán de 3.31 × 1.69 × 1.30 m en fibra de vidrio</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#e0782a;font-weight:800">✓</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Plataforma frontal, soportes y compartimentos estancos</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#e0782a;font-weight:800">✓</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Pintura marina, prueba de flotabilidad y garantía estructural</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#e0782a;font-weight:800">✓</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Figura de jaguar</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#5d7a70">—</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">2 motores eléctricos y 2 baterías de litio de 100 Ah</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#5d7a70">—</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Banda recolectora, malla y báscula que pesa la basura</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#5d7a70">—</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Control remoto, GPS, brújula electrónica y regreso a base</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#5d7a70">—</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Cámara en vivo y cámara con IA que identifica residuos</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#5d7a70">—</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">LiDAR y sensores ultrasónicos para esquivar obstáculos</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#5d7a70">—</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Sensores de pH, conductividad, turbidez y temperatura</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#5d7a70">—</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Datos en tiempo real en la app y la página web</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#5d7a70">—</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr><tr><td style="padding:9px 20px;border-bottom:1px solid #2f4a41">Sensores de fuga, paro de emergencia y protecciones</td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center"><span style="color:#5d7a70">—</span></td><td style="padding:9px 20px;border-bottom:1px solid #2f4a41;text-align:center;background:#1b3029"><span style="color:#e0782a;font-weight:800">✓</span></td></tr>
-<tr><td style="padding:14px 20px;font-weight:700">Precio sin IVA</td><td style="padding:14px 20px;text-align:center;font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:800;color:#e0782a">$104,900</td><td style="padding:14px 20px;text-align:center;font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:800;color:#13241f;background:#e0782a">$169,000</td></tr>
+<tr><td style="padding:12px 20px;font-weight:700">Precio sin IVA<br><span style="font-weight:400;color:#c9c2b4">Precio con IVA</span></td><td style="padding:12px 20px;text-align:center"><span style="font-family:'Outfit', Arial, sans-serif;font-size:32px;font-weight:800;color:#e0782a">$104,900</span><br><span style="font-size:22px;color:#c9c2b4">$121,684</span></td><td style="padding:12px 20px;text-align:center;background:#e0782a;color:#13241f"><span style="font-family:'Outfit', Arial, sans-serif;font-size:32px;font-weight:800">$169,000</span><br><span style="font-size:22px">$196,040</span></td></tr>
 </table>
 <img src="img/chb01_spin.webp" alt="Modelo 3D del catamarán CHB01-27 girando" style="position:absolute;left:1350px;top:250px;width:460px;height:275px;object-fit:contain">
 <p style="position:absolute;left:1350px;top:520px;width:460px;font-size:24px;font-weight:700;text-align:center;color:#e0782a">CHB01-27 · Catamarán</p>
@@ -174,7 +174,7 @@ section aside{display:none}
 <aside>[3:10 – 3:55] BRAYAM: El CHB01 es el catamarán: la plataforma probada, lista para equipar. El CHB02, el Jaguar Inteligente, lo tiene todo: motores eléctricos y baterías de litio, banda recolectora y báscula, GPS y regreso a base, una cámara con inteligencia artificial que identifica la basura, LiDAR y sensores ultrasónicos para esquivar obstáculos, y los sensores de calidad del agua, con los datos en vivo en la aplicación.</aside>
 </section>
 
-<section data-i="7" id="innovacion" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<section data-i="7" id="innovacion" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
 <img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
@@ -199,19 +199,19 @@ section aside{display:none}
 <p style="font-size:26px;line-height:1.35">Diseño de jaguar que atrae al turismo y educa sobre el agua.</p>
 </div>
 </div>
-<img src="img/constr-body.jpg" alt="Construcción del modelo Grande con piel de jaguar" data-build-in="rise" style="position:absolute;left:1176px;top:160px;width:616px;height:347px;object-fit:cover;border-radius:24px">
-<img src="img/comp-mascot.jpg" alt="La mascota de CHENEK BALAM en InnovaTecNM 2025" data-build-in="rise" style="position:absolute;left:1176px;top:531px;width:616px;height:347px;object-fit:cover;border-radius:24px">
+<img src="img/constr-body.jpg" alt="Construcción del modelo Grande con piel de jaguar" style="position:absolute;left:1176px;top:160px;width:616px;height:347px;object-fit:cover;border-radius:24px">
+<img src="img/comp-mascot.jpg" alt="La mascota de CHENEK BALAM en InnovaTecNM 2025" style="position:absolute;left:1176px;top:531px;width:616px;height:347px;object-fit:cover;border-radius:24px">
 <p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#5f6b66">Construcción del casco con figura de jaguar y la mascota del proyecto en InnovaTecNM 2025.</p>
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
 <aside>[3:55 – 4:10] BRAYAM: Va hacia la basura, limpia y mide, es tecnología nacional y tiene identidad chiapaneca.</aside>
 </section>
 
-<section data-i="8" id="viabtec" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<section data-i="8" id="viabtec" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
 <img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:-60px;top:200px;width:760px;height:832px;object-fit:contain">
-<img src="img/proto-front.jpg" alt="Dos integrantes del equipo junto al prototipo en el agua" data-build-in="fade" style="position:absolute;left:1180px;top:160px;width:612px;height:440px;object-fit:cover;border-radius:24px">
-<img src="img/constr-frame.jpg" alt="Construcción de la estructura metálica del robot" data-build-in="rise" style="position:absolute;left:1180px;top:624px;width:290px;height:296px;object-fit:cover;border-radius:24px">
-<img src="img/constr-foam.jpg" alt="Modelado en espuma de la cabeza de jaguar" data-build-in="rise" style="position:absolute;left:1494px;top:624px;width:298px;height:296px;object-fit:cover;border-radius:24px">
+<img src="img/proto-front.jpg" alt="Dos integrantes del equipo junto al prototipo en el agua" style="position:absolute;left:1180px;top:160px;width:612px;height:440px;object-fit:cover;border-radius:24px">
+<img src="img/constr-frame.jpg" alt="Construcción de la estructura metálica del robot" style="position:absolute;left:1180px;top:624px;width:290px;height:296px;object-fit:cover;border-radius:24px">
+<img src="img/constr-foam.jpg" alt="Modelado en espuma de la cabeza de jaguar" style="position:absolute;left:1494px;top:624px;width:298px;height:296px;object-fit:cover;border-radius:24px">
 <img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
 <p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#c9c2b4">09 / 17</p>
@@ -228,7 +228,7 @@ section aside{display:none}
 <aside>[4:10 – 4:20] BRAYAM: Y ya funciona: lo fabricamos aquí. Alfredo les explicará el negocio.</aside>
 </section>
 
-<section data-i="9" id="mercado" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<section data-i="9" id="mercado" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
 <img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
@@ -242,14 +242,14 @@ section aside{display:none}
 <tr><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Municipios</td><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Ríos urbanos, canales y lagunas</td></tr>
 <tr><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;font-weight:700;background:#fbf8f2">Turismo y empresas</td><td style="padding:16px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">Prestadores turísticos, cooperativas pesqueras y empresas con programas ambientales</td></tr>
 </table>
-<img src="img/comp-officials.jpg" alt="El equipo presentando el prototipo ante autoridades" data-build-in="rise" style="position:absolute;left:1292px;top:160px;width:500px;height:640px;object-fit:cover;border-radius:24px">
+<img src="img/comp-officials.jpg" alt="El equipo presentando el prototipo ante autoridades" style="position:absolute;left:1292px;top:160px;width:500px;height:640px;object-fit:cover;border-radius:24px">
 <p style="position:absolute;left:128px;bottom:64px;width:1400px;font-size:24px;color:#5f6b66">Además: áreas naturales, granjas acuícolas (suscripción de datos) y una red nacional en los 32 estados.</p>
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
 <aside>[4:20 – 4:55] ALFREDO: Gracias, Brayam. ¿Quién paga por limpiar el agua? Tenemos 11 robots comprometidos con Quintana Roo, interés en Monterrey y un convenio con Pesca de Chiapas con potencial de 22 robots en cinco años. Después vienen los municipios, las áreas naturales, el turismo y las cooperativas.</aside>
 </section>
 
-<section data-i="10" id="modelo" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<section data-i="10" id="modelo" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
 <img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
@@ -261,7 +261,7 @@ section aside{display:none}
 <img src="img/proto-side.jpg" alt="Prototipo CHENEK BALAM visto de lado" style="width:470px;height:170px;object-fit:cover;border-radius:24px">
 <h3 style="font-family:'Outfit', Arial, sans-serif;font-size:34px;font-weight:700;color:#1f6f62;padding:12px 32px 0px">Venta del robot</h3>
 <p style="font-size:26px;line-height:1.35;padding:0px 32px">Dos modelos, con instalación y capacitación.</p>
-<p style="font-size:26px;font-weight:700;padding:0px 32px">$104,900 y $169,000 + IVA</p>
+<p style="font-size:22px;font-weight:700;padding:0px 32px;line-height:1.4">CHB01: $104,900 + IVA<br><span style="font-weight:400">($121,684 con IVA)</span><br>CHB02: $169,000 + IVA<br><span style="font-weight:400">($196,040 con IVA)</span></p>
 </div>
 <div style="flex:1;display:flex;flex-direction:column;gap:10px;background:#fbf8f2;border-radius:24px;border:1px solid #ddd5c6;padding:0px 0px 32px">
 <img src="img/proto-float.jpg" alt="El robot recolectando basura en una laguna" style="width:470px;height:170px;object-fit:cover;border-radius:24px">
@@ -279,35 +279,28 @@ section aside{display:none}
 <p style="font-size:26px;line-height:1.4;width:1400px"><b>Cómo vendemos:</b> convenios con gobierno, padrón de proveedores, demostraciones en campo y anticipo de 30 %.</p>
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
-<aside>[4:55 – 5:20] ALFREDO: Ganamos de tres formas: la venta del robot: 104 mil 900 el catamarán y 169 mil el Jaguar Inteligente, más IVA; la póliza de mantenimiento, de 15 mil pesos al año; y la suscripción a los datos del agua, de mil 500 pesos al mes.</aside>
+<aside>[4:55 – 5:25] ALFREDO: Ganamos de tres formas. La venta del robot: el catamarán, en 104 mil 900 pesos más IVA, 121 mil 684 con IVA; y el Jaguar Inteligente, en 169 mil más IVA, 196 mil 40 con IVA. La póliza de mantenimiento, de 15 mil pesos al año. Y la suscripción a los datos del agua, de mil 500 pesos al mes.</aside>
 </section>
 
-<section data-i="11" id="viabeco" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<section data-i="11" id="viabeco" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
 <img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
 <p style="position:absolute;left:1592px;top:56px;width:200px;font-size:24px;text-align:right;color:#5f6b66">12 / 17</p>
 <div style="display:flex;align-items:center;gap:20px"><div style="width:64px;height:6px;background:#e0782a;border-radius:3px"></div><p style="font-size:26px;font-weight:700;color:#1f6f62;letter-spacing:3px">VIABILIDAD ECONÓMICA</p></div>
-<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:58px;font-weight:700;line-height:1.1;width:1500px">Cada robot deja margen y cuesta menos que el importado</h2>
-<div style="display:flex;gap:36px;width:1664px">
-<table style="width:1080px;font-size:26px;border-collapse:collapse;align-self:flex-start">
-<tr><th style="text-align:left;padding:14px 22px;background:#13241f;color:#f4efe6">Modelo</th><th style="text-align:right;padding:14px 22px;background:#13241f;color:#f4efe6">Costo</th><th style="text-align:right;padding:14px 22px;background:#13241f;color:#f4efe6">Precio</th><th style="text-align:right;padding:14px 22px;background:#13241f;color:#f4efe6">Ganancia</th><th style="text-align:right;padding:14px 22px;background:#13241f;color:#f4efe6">Margen</th></tr>
-<tr><td style="padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2;font-weight:700">CHB01-27 Catamarán</td><td style="text-align:right;padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$48,000</td><td style="text-align:right;padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$104,900</td><td style="text-align:right;padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$53,753</td><td style="text-align:right;padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">51 %</td></tr><tr><td style="padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2;font-weight:700">CHB02-27 Jaguar Inteligente</td><td style="text-align:right;padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$122,170</td><td style="text-align:right;padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$169,000</td><td style="text-align:right;padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$41,760</td><td style="text-align:right;padding:14px 22px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">25 %</td></tr>
+<h2 style="font-family:'Outfit', Arial, sans-serif;font-size:54px;font-weight:700;line-height:1.1;width:1600px">Costos, precios y rentabilidad</h2>
+<table style="width:1440px;font-size:24px;border-collapse:collapse">
+<tr><th style="text-align:left;padding:12px 18px;background:#13241f;color:#f4efe6">Modelo</th><th style="text-align:right;padding:12px 18px;background:#13241f;color:#f4efe6">Costo</th><th style="text-align:right;padding:12px 18px;background:#13241f;color:#f4efe6">Precio sin IVA</th><th style="text-align:right;padding:12px 18px;background:#13241f;color:#f4efe6">Precio con IVA</th><th style="text-align:right;padding:12px 18px;background:#13241f;color:#f4efe6">Ganancia</th><th style="text-align:right;padding:12px 18px;background:#13241f;color:#f4efe6">Margen</th></tr>
+<tr><td style="padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2;font-weight:700">CHB01-27 Catamarán</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$48,000</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$104,900</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$121,684</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$53,753</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">51 %</td></tr><tr><td style="padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2;font-weight:700">CHB02-27 Jaguar Inteligente</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$122,170</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$169,000</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$196,040</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">$41,760</td><td style="text-align:right;padding:12px 18px;border-bottom:1px solid #ddd5c6;background:#fbf8f2">25 %</td></tr>
 </table>
-<div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#13241f;color:#f4efe6;padding:34px;border-radius:24px">
-<p style="font-size:24px">Punto de equilibrio del año 1</p>
-<p style="font-family:'Outfit', Arial, sans-serif;font-size:60px;font-weight:800;color:#e0782a;line-height:1">14 robots</p>
-<p style="font-size:23px;line-height:1.35">Los 11 de Quintana Roo y 3 catamaranes cubren todos los costos, incluidos los sueldos de los socios.</p>
-<p style="font-size:23px;line-height:1.35;color:#c9c2b4">Importado: desde $282,000. El CHB02 cuesta 40 % menos.</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:22px;color:#5f6b66">Pesos sin IVA. Ganancia después de reservar 3 % del precio para garantía. Costos de componentes por confirmar con cotizaciones.</p>
+<div style="display:flex;flex-wrap:wrap;gap:16px;width:1440px"><div style="flex:1;min-width:440px;background:#13241f;color:#f4efe6;border:1px solid #ddd5c6;border-radius:18px;padding:18px 22px"><p style="font-size:20px;color:#c9c2b4">Punto de equilibrio</p><p style="font-family:'Outfit', Arial, sans-serif;font-size:40px;font-weight:800;color:#e0782a;line-height:1.1">12 robots al año</p></div><div style="flex:1;min-width:440px;background:#fbf8f2;color:#1d2b26;border:1px solid #ddd5c6;border-radius:18px;padding:18px 22px"><p style="font-size:20px;color:#5f6b66">Inversión inicial</p><p style="font-family:'Outfit', Arial, sans-serif;font-size:40px;font-weight:800;color:#e0782a;line-height:1.1">$329,014</p></div><div style="flex:1;min-width:440px;background:#fbf8f2;color:#1d2b26;border:1px solid #ddd5c6;border-radius:18px;padding:18px 22px"><p style="font-size:20px;color:#5f6b66">Utilidad neta año 1</p><p style="font-family:'Outfit', Arial, sans-serif;font-size:40px;font-weight:800;color:#e0782a;line-height:1.1">$95,165</p></div><div style="flex:1;min-width:440px;background:#fbf8f2;color:#1d2b26;border:1px solid #ddd5c6;border-radius:18px;padding:18px 22px"><p style="font-size:20px;color:#5f6b66">Recuperación</p><p style="font-family:'Outfit', Arial, sans-serif;font-size:40px;font-weight:800;color:#e0782a;line-height:1.1">2.5 años</p></div><div style="flex:1;min-width:440px;background:#fbf8f2;color:#1d2b26;border:1px solid #ddd5c6;border-radius:18px;padding:18px 22px"><p style="font-size:20px;color:#5f6b66">TIR a 5 años</p><p style="font-family:'Outfit', Arial, sans-serif;font-size:40px;font-weight:800;color:#e0782a;line-height:1.1">38.9 %</p></div><div style="flex:1;min-width:440px;background:#fbf8f2;color:#1d2b26;border:1px solid #ddd5c6;border-radius:18px;padding:18px 22px"><p style="font-size:20px;color:#5f6b66">ROI a 5 años</p><p style="font-family:'Outfit', Arial, sans-serif;font-size:40px;font-weight:800;color:#e0782a;line-height:1.1">180 %</p></div></div>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:22px;color:#5f6b66">Ganancia después de reservar 3 % para garantía. Año 1: 11 CHB02 y 3 CHB01. Importado desde $282,000: el CHB02 cuesta 40 % menos.</p>
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
-<aside>[5:20 – 6:10] ALFREDO: Fabricar el Jaguar Inteligente nos cuesta 122 mil pesos y lo vendemos en 169 mil: deja 42 mil por robot. El catamarán deja 54 mil. Un robot importado cuesta desde 282 mil: el nuestro cuesta 40 % menos. Nuestro punto de equilibrio es de 14 robots en el primer año: los 11 de Quintana Roo y 3 catamaranes cubren todos nuestros costos, incluidos nuestros sueldos.</aside>
+<aside>[5:25 – 6:20] ALFREDO: Fabricar el Jaguar Inteligente nos cuesta 122 mil pesos: deja 41 mil 760 por robot, un 25 %. El catamarán deja 53 mil 753, un 51 %. Y aun así, el Jaguar cuesta 40 % menos que un robot importado. Nuestro punto de equilibrio es de 12 robots al año. Con los 11 de Quintana Roo y 3 catamaranes, el primer año dejamos una utilidad neta de 95 mil pesos, recuperamos la inversión de 329 mil en dos años y medio, y a cinco años tenemos una TIR de 38.9 %.</aside>
 </section>
 
-<section data-i="12" id="impacto" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<section data-i="12" id="impacto" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:36px">
 <img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
@@ -329,13 +322,13 @@ section aside{display:none}
 </div>
 </div>
 <div style="display:flex;gap:18px;width:1040px"><div style="flex:1;background:#e0782a;color:#13241f;border-radius:20px;padding:18px 26px"><p style="font-family:'Outfit', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1">19</p><p style="font-size:24px;font-weight:700">empleos directos</p></div><div style="flex:1;background:#1f6f62;color:#f4efe6;border-radius:20px;padding:18px 26px"><p style="font-family:'Outfit', Arial, sans-serif;font-size:56px;font-weight:800;line-height:1">25</p><p style="font-size:24px;font-weight:700">empleos indirectos</p></div><div style="flex:2;background:#fbf8f2;border:1px solid #ddd5c6;border-radius:20px;padding:18px 26px"><p style="font-size:22px;line-height:1.3">Con los 11 robots de Quintana Roo. Directos: socios, armado, software, instalación, mantenimiento. Indirectos: 2 operadores por robot y proveedores locales.</p></div></div>
-<img src="img/proto-float.jpg" alt="CHENEK BALAM recolectando botellas en una laguna" data-build-in="rise" style="position:absolute;left:1232px;top:160px;width:560px;height:680px;object-fit:cover;border-radius:24px">
+<img src="img/proto-float.jpg" alt="CHENEK BALAM recolectando botellas en una laguna" style="position:absolute;left:1232px;top:160px;width:560px;height:680px;object-fit:cover;border-radius:24px">
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
-<aside>[6:10 – 6:50] ALFREDO: Nuestro impacto es ambiental, social y económico. Y generamos empleo: con los 11 robots de Quintana Roo, son 44 empleos en el primer año: 19 directos y 25 indirectos. Contamos 2 operadores por cada robot que trabaja con el cliente, 1 técnico de mantenimiento por cada 5 robots y 1 empleo en proveedores por cada 4 robots fabricados.</aside>
+<aside>[6:20 – 7:00] ALFREDO: Nuestro impacto es ambiental, social y económico. Y generamos empleo: con los 11 robots de Quintana Roo, son 44 empleos en el primer año: 19 directos y 25 indirectos. Contamos 2 operadores por cada robot que trabaja con el cliente, 1 técnico de mantenimiento por cada 5 robots y 1 empleo en proveedores por cada 4 robots fabricados.</aside>
 </section>
 
-<section data-i="13" id="crecimiento" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<section data-i="13" id="crecimiento" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:40px">
 <img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
@@ -368,10 +361,10 @@ section aside{display:none}
 <p style="font-size:22px;color:#c9c2b4;width:1400px">Empleos totales (directos + indirectos) en el año 5. Metodología: 2 operadores por robot en operación, 1 técnico por cada 5 robots y 1 empleo en proveedores por cada 4 robots fabricados.</p>
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
-<aside>[6:50 – 7:15] ALFREDO: En ventas, pasamos de 11 robots en el primer año a 35 al año en el quinto. Con lo comprometido llegamos a 317 empleos; si sumamos Monterrey y Pesca, a 684. Y nuestra visión: CHENEK BALAM en los 32 estados, con más de 750 empleos.</aside>
+<aside>[7:00 – 7:25] ALFREDO: En ventas, pasamos de 11 robots en el primer año a 35 al año en el quinto. Con lo comprometido llegamos a 317 empleos; si sumamos Monterrey y Pesca, a 684. Y nuestra visión: CHENEK BALAM en los 32 estados, con más de 750 empleos.</aside>
 </section>
 
-<section data-i="14" id="legal" data-transition="magic" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<section data-i="14" id="legal" style="background:#f4efe6;color:#1d2b26;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 160px;display:flex;flex-direction:column;gap:32px">
 <img src="img/wm-onlight.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:1180px;top:150px;width:700px;height:767px;object-fit:contain">
 <img src="img/logo-mark-dark.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#1d2b26">CHENEK BALAM</p>
@@ -407,20 +400,20 @@ section aside{display:none}
 <p style="position:absolute;left:128px;bottom:64px;width:1300px;font-size:22px;color:#5f6b66">Empleos con seguridad social, como lo marcan la Ley Federal del Trabajo y la Ley del Seguro Social.</p>
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
-<aside>[7:15 – 8:00] ALFREDO: En CHENEK BALAM también nos esforzamos por el bienestar laboral de nuestros futuros empleados. Por eso nos estamos cimentando como una entidad legal: la Secretaría de Economía ya nos autorizó la razón social Impulsora de Proyectos Inteligentes Chenek Balam, y ya solicitamos el registro de nuestra marca ante el IMPI. Siguen la constitución ante notario, nuestro RFC y e.firma para poder facturar, y nuestras altas patronales ante el IMSS y el INFONAVIT, para pagar las cuotas sobre el salario diario integrado de cada trabajador, como lo marca la ley. Pero todo esto empezó con una historia. Sergio.</aside>
+<aside>[7:25 – 7:55] ALFREDO: También cuidamos el bienestar laboral de nuestros futuros empleados. La Secretaría de Economía ya nos autorizó la razón social y solicitamos el registro de la marca ante el IMPI. Siguen la constitución ante notario, el RFC y la e.firma para poder facturar, y el alta patronal en el IMSS y el INFONAVIT, para pagar las cuotas de cada trabajador, como marca la ley. Pero todo empezó con una historia. Sergio.</aside>
 </section>
 
-<section data-i="15" id="historia" data-transition="magic" style="background:#000;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:0;display:flex;flex-direction:column">
+<section data-i="15" id="historia" style="background:#000;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:0;display:flex;flex-direction:column">
 <img src="img/ninos.jpg" alt="Niños jugando entre la basura y el plástico en el agua" style="position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover">
 <div style="position:absolute;left:0;top:0;width:1920px;height:1080px;background:linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.05) 80%)"></div>
 <img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
 <p style="position:absolute;left:192px;top:56px;width:600px;font-size:24px;font-weight:700;letter-spacing:4px;color:#f4efe6">CHENEK BALAM</p>
 <p style="position:absolute;left:128px;top:600px;width:860px;font-family:'Outfit', Arial, sans-serif;font-size:56px;font-weight:600;line-height:1.15;color:#f4efe6">Un día, en el Cañón del Sumidero, vimos esto.</p>
-<p data-build-in="fade" style="position:absolute;left:128px;top:820px;width:900px;font-family:'Outfit', Arial, sans-serif;font-size:72px;font-weight:800;line-height:1.05;color:#e0782a">Ahí nació CHENEK BALAM.</p>
-<aside>[8:00 – 9:05] SERGIO: Gracias, Alfredo. Un día caminamos por el Cañón del Sumidero. Y vimos esto. Niños. Jugando entre el plástico. En el agua de uno de los lugares más bellos de México. Ellos no eligieron ese río. Lo heredaron. Se los estamos dejando así. Ese día decidimos que no íbamos a quedarnos mirando. Ese día nació CHENEK BALAM.</aside>
+<p style="position:absolute;left:128px;top:820px;width:900px;font-family:'Outfit', Arial, sans-serif;font-size:72px;font-weight:800;line-height:1.05;color:#e0782a">Ahí nació CHENEK BALAM.</p>
+<aside>[7:55 – 8:55] SERGIO: Gracias, Alfredo. Un día caminamos por el Cañón del Sumidero. Y vimos esto. Niños. Jugando entre el plástico. En el agua de uno de los lugares más bellos de México. Ellos no eligieron ese río. Lo heredaron. Se los estamos dejando así. Ese día decidimos que no íbamos a quedarnos mirando. Ese día nació CHENEK BALAM.</aside>
 </section>
 
-<section data-i="16" id="cierre" data-transition="magic" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 128px;display:flex;flex-direction:column;justify-content:center;gap:36px">
+<section data-i="16" id="cierre" style="background:#13241f;color:#f4efe6;font-family:'Source Sans 3', Arial, sans-serif;padding:160px 128px 128px;display:flex;flex-direction:column;justify-content:center;gap:36px">
 <img src="img/wm-ondark.png" alt="Marca de agua con el logotipo de CHENEK BALAM" style="position:absolute;left:-80px;top:180px;width:820px;height:898px;object-fit:contain">
 <img src="img/proto-team.jpg" alt="Integrantes del equipo recolectando basura con el robot en la orilla" style="position:absolute;left:1120px;top:0px;width:800px;height:1080px;object-fit:cover">
 <img src="img/logo-mark-light.png" alt="Logotipo de CHENEK BALAM" style="position:absolute;left:128px;top:48px;width:48px;height:53px;object-fit:contain">
@@ -432,7 +425,7 @@ section aside{display:none}
 <p style="font-size:28px;line-height:1.4;width:880px;color:#d9d2c3">Equipo CHENEK BALAM · Instituto Tecnológico de Tuxtla Gutiérrez<br>Asesores: Juan Humberto Carpio Tovilla y Jorge Arturo Sarmiento Torres</p>
 <img class="mini3d" src="img/chb01_spin.webp" alt="Modelo 3D del CHB01-27 girando" style="position:absolute;left:1575px;top:968px;width:150px;height:90px;object-fit:contain">
 <img class="mini3d" src="img/chb02_spin.webp" alt="Modelo 3D del CHB02-27 girando" style="position:absolute;left:1735px;top:940px;width:120px;height:111px;object-fit:contain">
-<aside>[9:05 – 9:45] SERGIO: Hoy ese jaguar ya funciona, ya tiene clientes y va a dar trabajo a familias de Chiapas. Si quieren ayudar al planeta, empiecen hoy: no tiren plástico al río y apuesten por la tecnología hecha en Chiapas. Porque esos niños merecen un río limpio. Muchas gracias. Estamos listos para sus preguntas.</aside>
+<aside>[8:55 – 9:35] SERGIO: Hoy ese jaguar ya funciona, ya tiene clientes y va a dar trabajo a familias de Chiapas. Si quieren ayudar al planeta, empiecen hoy: no tiren plástico al río y apuesten por la tecnología hecha en Chiapas. Porque esos niños merecen un río limpio. Muchas gracias. Estamos listos para sus preguntas.</aside>
 </section>
 
 </div>
