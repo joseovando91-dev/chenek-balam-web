@@ -15,6 +15,7 @@ import MissionSection from '@/components/sections/mission';
 import TeamSection from '@/components/sections/team';
 import GallerySection from '@/components/sections/gallery';
 import SimulatorSection from '@/components/sections/simulator';
+import WaterMonitorSection from '@/components/sections/water-monitor';
 import ComparisonSection from '@/components/sections/comparison';
 import LegalSection from '@/components/sections/legal';
 import ContactSection from '@/components/sections/contact';
@@ -34,6 +35,7 @@ export default function Home() {
       <EngineeringSection />
       <ConstructionSection />
       <SpecsSection />
+      <WaterMonitorSection />
       <ModelsSection />
       <ComparisonSection />
       <TimelineSection />

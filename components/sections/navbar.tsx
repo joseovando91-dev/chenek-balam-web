@@ -11,6 +11,7 @@ const navLinks = [
   { href: '#solucion', label: 'Solución' },
   { href: '#diseno', label: 'Diseño' },
   { href: '#construccion', label: 'Construcción' },
+  { href: '#monitoreo', label: 'Monitoreo' },
   { href: '#modelos', label: 'Modelos' },
   { href: '#comparativa', label: 'Comparativa' },
   { href: '#competencias', label: 'Competencias' },
